@@ -517,6 +517,23 @@
             background: transparent;
             padding: 120px 24px;
             border-top: 1px solid rgba(143,174,122,0.07);
+            position: relative;
+            overflow: hidden;
+        }
+        .clientes-parallax-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 0;
+            overflow: hidden;
+        }
+        .clientes-parallax-bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
         }
         .clientes-inner {
             max-width: 1100px;
@@ -525,6 +542,8 @@
             grid-template-columns: 1fr 1fr;
             gap: 88px;
             align-items: start;
+            position: relative;
+            z-index: 1;
         }
         @media (max-width: 900px) { .clientes-inner { grid-template-columns: 1fr; gap: 64px; } }
         .clientes-left { position: sticky; top: 90px; }
@@ -1141,6 +1160,10 @@
 
     <!-- INFO / STATS / TESTIMONIOS -->
     <section id="clientes" class="reveal-section clientes-section">
+        <!-- Parallax Background -->
+        <div class="clientes-parallax-bg">
+            <img src="images/fondo.png" alt="">
+        </div>
         <div class="clientes-inner">
             <div class="clientes-left">
                 <div class="clientes-tag-wrap">
@@ -1602,6 +1625,21 @@
                         start: 'top bottom',
                         end: 'bottom top',
                         scrub: 1.5
+                    }
+                });
+            }
+
+            // Parallax en la sección clientes (reseñas)
+            const clientesParallaxImg = document.querySelector('.clientes-parallax-bg img');
+            if (clientesParallaxImg) {
+                gsap.to(clientesParallaxImg, {
+                    yPercent: 15,
+                    ease: 'none',
+                    scrollTrigger: {
+                        trigger: '#clientes',
+                        start: 'top bottom',
+                        end: 'bottom top',
+                        scrub: 1.2
                     }
                 });
             }
