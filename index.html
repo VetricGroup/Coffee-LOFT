@@ -619,7 +619,7 @@
                 <!-- Imagen central -->
                 <div style="position:relative;width:260px;flex-shrink:0;" class="sobre-center-img">
                     <div style="border-radius:12px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,0.5);">
-                        <video src="videos/video.mp4" autoplay loop muted playsinline style="width:100%;aspect-ratio:3/4;object-fit:cover;display:block;"></video>
+                        <video id="sobre-video" src="Videos/video.mp4" autoplay loop muted playsinline preload="auto" style="width:100%;aspect-ratio:3/4;object-fit:cover;display:block;"></video>
                     </div>
                     <!-- Marco decorativo -->
                     <div style="position:absolute;inset:-10px;border:1px solid rgba(227,183,120,0.2);border-radius:14px;pointer-events:none;z-index:-1;"></div>
@@ -1143,6 +1143,33 @@
                 });
             }, { threshold: 0.4 });
             cards.forEach(c => observer.observe(c));
+        })();
+
+        // --- Forzar autoplay del video en iOS ---
+        (function() {
+            var vid = document.getElementById('sobre-video');
+            if (!vid) return;
+            vid.muted = true;
+            var playPromise = vid.play();
+            if (playPromise !== undefined) {
+                playPromise.catch(function() {
+                    // Si falla, intentar al primer toque del usuario
+                    document.addEventListener('touchstart', function tryPlay() {
+                        vid.play();
+                        document.removeEventListener('touchstart', tryPlay);
+                    }, { once: true });
+                });
+            }
+            // IntersectionObserver: reproducir cuando sea visible
+            if ('IntersectionObserver' in window) {
+                var observer = new IntersectionObserver(function(entries) {
+                    entries.forEach(function(entry) {
+                        if (entry.isIntersecting) { vid.play(); }
+                        else { vid.pause(); }
+                    });
+                }, { threshold: 0.25 });
+                observer.observe(vid);
+            }
         })();
 
         // --- Fix sobre layout on mobile ---
