@@ -475,7 +475,7 @@
         <div class="sh-stage">
             <!-- background image (fades out as media expands) -->
             <div id="sh-bg">
-                <img src="images/fondo.png" alt="The Coffee Loft entre campos de café al atardecer" />
+                <img src="images/fondo1.png" alt="The Coffee Loft entre campos de café al atardecer" />
                 <div class="sh-bg-overlay"></div>
             </div>
 
@@ -483,7 +483,7 @@
                 <div class="sh-viewport">
                     <!-- expanding media: cross-fading event images -->
                     <div id="sh-media" style="width:300px; height:400px;">
-                        <video class="sh-slide active" src="videos/video.mp4" autoplay muted loop playsinline style="object-fit:cover; width:100%; height:100%;"></video>
+                        <img class="sh-slide active" src="images/foto1.png" alt="The Coffee Loft" />
                         <div class="sh-media-overlay"></div>
                         <div id="sh-media-caption">
                             <p class="sh-date">San Rafael · Heredia</p>
@@ -1039,20 +1039,6 @@
 
             setExpanded(false);
             render();
-
-            // Forzar reproducción del video
-            const heroVideo = media.querySelector('video');
-            if (heroVideo) {
-                heroVideo.muted = true;
-                const playPromise = heroVideo.play();
-                if (playPromise !== undefined) {
-                    playPromise.catch(() => {
-                        // Si falla, intentar al primer click/touch del usuario
-                        document.addEventListener('click', () => heroVideo.play(), { once: true });
-                        document.addEventListener('touchstart', () => heroVideo.play(), { once: true });
-                    });
-                }
-            }
 
 
         })();
