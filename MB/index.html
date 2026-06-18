@@ -1,0 +1,1719 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Coffee Loft — Eventos & Cafetería · San Rafael, Heredia</title>
+    <meta name="description" content="The Coffee Loft: el lugar perfecto para eventos inolvidables y cafetería de especialidad, rodeado de campos de café en San Rafael, Heredia, Costa Rica.">
+    <meta name="keywords" content="eventos, bodas, cafetería, San Rafael Heredia, Costa Rica, salón de eventos, café de especialidad, The Coffee Loft">
+    <meta property="og:title" content="The Coffee Loft — Eventos & Cafetería">
+    <meta property="og:description" content="El lugar perfecto para eventos inolvidables y recuerdos queridos. Rodeado de campos de café en San Rafael, Heredia.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="images/og-preview.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="The Coffee Loft — Eventos & Cafetería">
+    <meta name="twitter:description" content="Eventos inolvidables y cafetería de especialidad rodeada de campos de café. San Rafael, Heredia.">
+    <!-- Favicon: coffee cup -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%231a2319'/%3E%3Cpath d='M9 12h11v6a4 4 0 0 1-4 4h-3a4 4 0 0 1-4-4z' fill='none' stroke='%23e3b778' stroke-width='1.5'/%3E%3Cpath d='M20 13h2.5a2 2 0 0 1 0 4H20' fill='none' stroke='%23e3b778' stroke-width='1.5'/%3E%3Cpath d='M12 6c-1 1.2-1 2.3 0 3.5M16 6c-1 1.2-1 2.3 0 3.5' fill='none' stroke='%23e3b778' stroke-width='1.2' stroke-linecap='round'/%3E%3C/svg%3E">
+    <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%231a2319'/%3E%3Cpath d='M9 12h11v6a4 4 0 0 1-4 4h-3a4 4 0 0 1-4-4z' fill='none' stroke='%23e3b778' stroke-width='1.5'/%3E%3Cpath d='M20 13h2.5a2 2 0 0 1 0 4H20' fill='none' stroke='%23e3b778' stroke-width='1.5'/%3E%3C/svg%3E">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Editorial Serif (títulos) + UI Sans-Serif con tracking amplio -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        /* ===================================================
+           VARIABLES DE PALETA "LUXURY EARTHY"
+        =================================================== */
+        :root {
+            --forest-deep:   #0f1a0e;
+            --forest-mid:    #152013;
+            --forest-warm:   #1a2a18;
+            --roast-dark:    #1e1810;
+            --roast-mid:     #2a1e12;
+            --sage:          #8fae7a;
+            --sage-bright:   #a8c490;
+            --gold:          #c9a46e;
+            --gold-light:    #e3c89e;
+            --cream:         #f0eadb;
+            --cream-dim:     rgba(240,234,219,0.88);
+            --cream-muted:   rgba(240,234,219,0.45);
+            --cream-ghost:   rgba(240,234,219,0.22);
+            --glass-bg:      rgba(15,26,14,0.45);
+            --glass-border:  rgba(143,174,122,0.18);
+            --glass-glow:    rgba(201,164,110,0.12);
+        }
+
+        /* ===================================================
+           BASE
+        =================================================== */
+        html { overflow-x: hidden; scroll-behavior: smooth; }
+        body {
+            /* Gradiente de fondo global: bosque profundo → café tostado */
+            background: linear-gradient(165deg, var(--forest-deep) 0%, var(--forest-mid) 28%, var(--forest-warm) 55%, var(--roast-mid) 80%, var(--roast-dark) 100%);
+            background-attachment: fixed;
+            overflow-x: hidden;
+            font-family: 'Raleway', sans-serif;
+            letter-spacing: 0.01em;
+            cursor: none; /* custom cursor */
+        }
+
+        /* Tipografía editorial */
+        .font-serif-display { font-family: 'Playfair Display', serif; }
+        .font-serif-alt     { font-family: 'Cormorant Garamond', serif; }
+
+        /* ===================================================
+           CURSOR FOLLOWER PERSONALIZADO
+        =================================================== */
+        #cursor-dot,
+        #cursor-ring {
+            position: fixed;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9999;
+            will-change: transform;
+        }
+        #cursor-dot {
+            width: 6px; height: 6px;
+            background: var(--sage);
+            top: -3px; left: -3px;
+            transition: transform 0.1s ease, background 0.25s ease;
+        }
+        #cursor-ring {
+            width: 36px; height: 36px;
+            border: 1.5px solid rgba(143,174,122,0.5);
+            top: -18px; left: -18px;
+            transition: width 0.3s ease, height 0.3s ease, border-color 0.3s ease, background 0.3s ease;
+            mix-blend-mode: normal;
+        }
+        body.cursor-hover #cursor-dot  { transform: scale(2); background: var(--gold); }
+        body.cursor-hover #cursor-ring {
+            width: 56px; height: 56px;
+            border-color: rgba(201,164,110,0.55);
+            background: rgba(201,164,110,0.06);
+            top: -28px; left: -28px;
+        }
+        @media (hover: none) {
+            #cursor-dot, #cursor-ring { display: none; }
+            body { cursor: auto; }
+        }
+
+        /* ===================================================
+           NAVBAR
+        =================================================== */
+        #navbar {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 100;
+            padding: 22px 36px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: background 0.5s ease, padding 0.4s ease, backdrop-filter 0.4s ease;
+        }
+        #navbar.scrolled {
+            background: rgba(11, 20, 10, 0.75);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            padding: 14px 36px;
+            border-bottom: 1px solid rgba(143,174,122,0.1);
+            box-shadow: 0 4px 40px rgba(0,0,0,0.3);
+        }
+        .nav-logo {
+            font-size: 16px;
+            font-weight: 500;
+            letter-spacing: 0.22em;
+            color: var(--cream-dim);
+            text-decoration: none;
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .nav-logo .logo-mark { width: 26px; height: 26px; color: var(--sage); }
+        .nav-links { display: flex; align-items: center; gap: 36px; }
+        .nav-links a {
+            font-size: 11px;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: rgba(240,234,219,0.5);
+            text-decoration: none;
+            transition: color 0.25s;
+            font-weight: 500;
+        }
+        .nav-links a:hover { color: var(--sage-bright); }
+        .nav-cta {
+            font-size: 11px;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            font-weight: 600;
+            color: var(--cream-dim) !important;
+            border: 1px solid rgba(143,174,122,0.4);
+            padding: 9px 22px;
+            border-radius: 999px;
+            transition: background 0.25s, border-color 0.25s, color 0.25s, box-shadow 0.25s !important;
+        }
+        .nav-cta:hover {
+            background: rgba(143,174,122,0.14) !important;
+            border-color: rgba(143,174,122,0.7) !important;
+            color: var(--sage) !important;
+            box-shadow: 0 0 18px rgba(143,174,122,0.15) !important;
+        }
+        @media (max-width: 640px) {
+            .nav-links { gap: 18px; }
+            .nav-links .nav-hide-sm { display: none; }
+            #navbar { padding: 16px 20px; }
+        }
+
+        /* ===================================================
+           FLOATING WHATSAPP
+        =================================================== */
+        #floating-wa {
+            position: fixed;
+            bottom: 30px; right: 30px;
+            z-index: 200;
+            width: 56px; height: 56px;
+            border-radius: 50%;
+            background: #25D366;
+            display: flex; align-items: center; justify-content: center;
+            box-shadow: 0 4px 24px rgba(37,211,102,0.45), 0 0 0 0 rgba(37,211,102,0.3);
+            transition: transform 0.25s, box-shadow 0.25s;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        #floating-wa:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 32px rgba(37,211,102,0.55), 0 0 0 8px rgba(37,211,102,0.08);
+        }
+        #floating-wa svg { width: 28px; height: 28px; fill: white; }
+
+        /* ===================================================
+           SECCIÓN SOBRE
+        =================================================== */
+        .sobre-section {
+            background: transparent;
+            padding: 140px 24px;
+        }
+        .sobre-inner {
+            max-width: 1000px;
+            width: 100%;
+            box-sizing: border-box;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 88px;
+            align-items: center;
+        }
+        @media (max-width: 768px) {
+            .sobre-section { padding: 90px 20px; }
+            .sobre-inner {
+                display: flex !important;
+                flex-direction: column !important;
+                gap: 48px !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                box-sizing: border-box !important;
+            }
+            .sobre-inner > * { width: 100% !important; max-width: 100% !important; box-sizing: border-box !important; min-width: 0 !important; }
+        }
+        .sobre-img-wrap { position: relative; width: 100%; min-width: 0; box-sizing: border-box; }
+        .sobre-img-wrap img {
+            width: 100%;
+            aspect-ratio: 4/5;
+            object-fit: cover;
+            object-position: center center;
+            border-radius: 20px;
+            filter: contrast(1.04) saturate(1.06);
+            display: block;
+        }
+        .sobre-img-wrap::before {
+            content: '';
+            position: absolute;
+            inset: -14px -14px 14px 14px;
+            border: 1px solid rgba(201,164,110,0.18);
+            border-radius: 20px;
+            pointer-events: none;
+        }
+        @media (max-width: 768px) { .sobre-img-wrap::before { display: none; } }
+        .sobre-tag {
+            display: inline-block;
+            font-size: 10px;
+            letter-spacing: 0.28em;
+            text-transform: uppercase;
+            font-weight: 600;
+            color: var(--sage);
+            margin-bottom: 26px;
+        }
+        .sobre-heading {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(32px, 4.5vw, 52px);
+            font-weight: 500;
+            color: var(--cream-dim);
+            line-height: 1.15;
+            margin-bottom: 26px;
+            letter-spacing: -0.01em;
+        }
+        .sobre-text {
+            font-size: 15px;
+            line-height: 1.9;
+            color: var(--cream-muted);
+            font-weight: 300;
+            margin-bottom: 18px;
+            letter-spacing: 0.015em;
+        }
+        .sobre-social { display: flex; flex-wrap: wrap; gap: 18px; margin-top: 36px; width: 100%; box-sizing: border-box; }
+        .sobre-social a {
+            font-size: 11px;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            font-weight: 500;
+            color: var(--cream-muted);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: color 0.25s;
+        }
+        .sobre-social a:hover { color: var(--sage); }
+        .sobre-social svg { width: 16px; height: 16px; flex-shrink: 0; }
+
+        /* ===================================================
+           SECCIÓN CONTACTO
+        =================================================== */
+        .contacto-section {
+            background: transparent;
+            padding: 120px 24px 140px;
+            border-top: 1px solid rgba(143,174,122,0.08);
+        }
+        .contacto-inner { max-width: 700px; margin: 0 auto; text-align: center; }
+        .contacto-tag {
+            font-size: 10px;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            font-weight: 600;
+            color: var(--sage);
+            display: block;
+            margin-bottom: 28px;
+        }
+        .contacto-heading {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(38px, 5.5vw, 64px);
+            font-weight: 500;
+            color: var(--cream-dim);
+            line-height: 1.1;
+            margin-bottom: 22px;
+            letter-spacing: -0.01em;
+        }
+        .contacto-sub {
+            font-size: 15px;
+            color: rgba(240,234,219,0.42);
+            line-height: 1.8;
+            font-weight: 300;
+            margin-bottom: 56px;
+            letter-spacing: 0.01em;
+        }
+        .contacto-btns { display: flex; flex-direction: column; align-items: center; gap: 16px; }
+
+        /* Botones */
+        .btn-wa {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 17px 40px;
+            background: #25D366;
+            color: white;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            text-decoration: none;
+            border-radius: 999px;
+            transition: background 0.25s, transform 0.25s, box-shadow 0.25s;
+            box-shadow: 0 6px 28px rgba(37,211,102,0.28);
+        }
+        .btn-wa:hover {
+            background: #1ebe5a;
+            transform: translateY(-3px);
+            box-shadow: 0 12px 36px rgba(37,211,102,0.4);
+        }
+        .btn-wa svg { width: 20px; height: 20px; fill: white; flex-shrink: 0; }
+        .btn-ig {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 30px;
+            background: transparent;
+            color: var(--cream-muted);
+            font-size: 11px;
+            letter-spacing: 0.15em;
+            font-weight: 500;
+            text-transform: uppercase;
+            text-decoration: none;
+            border: 1px solid rgba(143,174,122,0.2);
+            border-radius: 999px;
+            transition: color 0.25s, border-color 0.25s, background 0.25s;
+        }
+        .btn-ig:hover { color: var(--sage); border-color: rgba(143,174,122,0.5); background: rgba(143,174,122,0.05); }
+        .btn-ig svg { width: 16px; height: 16px; flex-shrink: 0; }
+        .btn-sage {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 15px 36px;
+            background: linear-gradient(135deg, var(--sage) 0%, var(--sage-bright) 100%);
+            color: #0f1a0e;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            text-decoration: none;
+            border-radius: 999px;
+            transition: transform 0.25s, box-shadow 0.25s, filter 0.25s;
+            box-shadow: 0 4px 20px rgba(143,174,122,0.28);
+        }
+        .btn-sage:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 32px rgba(143,174,122,0.38);
+            filter: brightness(1.06);
+        }
+
+        /* ===================================================
+           FOOTER
+        =================================================== */
+        .footer {
+            background: linear-gradient(to right, var(--forest-deep), var(--roast-dark));
+            border-top: 1px solid rgba(143,174,122,0.08);
+            padding: 40px 36px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+        .footer-logo {
+            font-size: 13px;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            font-weight: 500;
+            color: rgba(240,234,219,0.45);
+        }
+        .footer-copy { font-size: 11px; color: rgba(240,234,219,0.18); letter-spacing: 0.06em; }
+        .footer-social { display: flex; gap: 22px; }
+        .footer-social a {
+            color: rgba(240,234,219,0.28);
+            transition: color 0.25s;
+            text-decoration: none;
+        }
+        .footer-social a:hover { color: var(--sage); }
+        .footer-social svg { width: 18px; height: 18px; display: block; }
+
+        /* ===================================================
+           ACORDEÓN DE SERVICIOS (mejorado)
+        =================================================== */
+        .accordion-wrap { max-width: 1200px; margin: 0 auto; overflow: hidden; }
+        .accordion-items {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            min-height: 460px;
+        }
+        .acc-item {
+            position: relative;
+            height: 460px;
+            border-radius: 24px; /* bordes más orgánicos */
+            overflow: hidden;
+            cursor: pointer;
+            transition: width 0.75s cubic-bezier(0.4, 0, 0.2, 1);
+            flex-shrink: 0;
+        }
+        .acc-item img {
+            position: absolute; inset: 0;
+            width: 100%; height: 100%;
+            object-fit: cover;
+            transition: transform 0.75s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .acc-item.active img,
+        .acc-item:hover img { transform: scale(1.04); }
+        .acc-item .acc-overlay {
+            position: absolute; inset: 0;
+            background: linear-gradient(to top, rgba(11,20,10,0.88) 0%, rgba(11,20,10,0.3) 60%, transparent 100%);
+            transition: background 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .acc-item:hover .acc-overlay,
+        .acc-item.active .acc-overlay {
+            background: linear-gradient(to top, rgba(11,20,10,0.75) 0%, rgba(11,20,10,0.15) 55%, transparent 100%);
+        }
+        .acc-label {
+            position: absolute;
+            bottom: 30px; left: 50%;
+            color: var(--cream-dim);
+            font-family: 'Playfair Display', serif;
+            font-size: 18px;
+            font-weight: 500;
+            white-space: nowrap;
+            transition: all 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+            pointer-events: none;
+        }
+        .acc-item:not(.active) .acc-label {
+            bottom: auto; top: 50%;
+            transform-origin: center center;
+            transform: translateX(-50%) translateY(-50%) rotate(90deg);
+            left: 50%;
+            font-size: 14px;
+            letter-spacing: 0.1em;
+        }
+        .acc-item.active .acc-label { transform: translateX(-50%); bottom: 30px; top: auto; }
+        .acc-desc {
+            position: absolute;
+            bottom: 68px; left: 0; right: 0;
+            text-align: center;
+            font-size: 10px;
+            letter-spacing: 0.24em;
+            text-transform: uppercase;
+            font-weight: 600;
+            color: var(--sage);
+            opacity: 0;
+            transition: opacity 0.5s ease 0.25s, transform 0.5s ease 0.25s;
+            transform: translateY(6px);
+        }
+        .acc-item.active .acc-desc {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Línea dorada en acc-item activo */
+        .acc-item::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+            transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .acc-item.active::after { width: 80%; }
+
+        @media (max-width: 768px) {
+            .accordion-items { flex-direction: column; align-items: stretch; gap: 8px; }
+            .acc-item { width: 100% !important; height: 80px !important; border-radius: 16px; transition: height 0.65s cubic-bezier(0.4, 0, 0.2, 1); }
+            .acc-item.active { height: 320px !important; }
+            .acc-item:not(.active) .acc-label { transform: translateX(-50%); top: auto; bottom: 22px; left: 50%; }
+        }
+
+        /* ===================================================
+           SECCIÓN INFO / STATS (clientes)
+        =================================================== */
+        .clientes-section {
+            background: transparent;
+            padding: 120px 24px;
+            border-top: 1px solid rgba(143,174,122,0.07);
+            position: relative;
+            overflow: hidden;
+        }
+        .clientes-parallax-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 0;
+            overflow: hidden;
+        }
+        .clientes-parallax-bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+        .clientes-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 88px;
+            align-items: start;
+            position: relative;
+            z-index: 1;
+        }
+        @media (max-width: 900px) { .clientes-inner { grid-template-columns: 1fr; gap: 64px; } }
+        .clientes-left { position: sticky; top: 90px; }
+        .clientes-tag-wrap {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            border: 1px solid rgba(143,174,122,0.22);
+            background: rgba(143,174,122,0.05);
+            padding: 5px 16px;
+            border-radius: 999px;
+            margin-bottom: 32px;
+        }
+        .clientes-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--sage); flex-shrink: 0; }
+        .clientes-tag-text {
+            font-size: 11px;
+            letter-spacing: 0.14em;
+            font-weight: 500;
+            color: rgba(240,234,219,0.5);
+            text-transform: uppercase;
+        }
+        .clientes-heading {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(32px, 4vw, 50px);
+            font-weight: 500;
+            color: var(--cream-dim);
+            line-height: 1.15;
+            letter-spacing: -0.01em;
+            margin-bottom: 22px;
+        }
+        .clientes-heading em { font-style: italic; color: var(--sage); }
+        .clientes-desc {
+            font-size: 15px;
+            line-height: 1.85;
+            color: rgba(240,234,219,0.42);
+            font-weight: 300;
+            margin-bottom: 40px;
+            letter-spacing: 0.012em;
+        }
+        .clientes-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-bottom: 40px; }
+        .stat-card {
+            background: rgba(143,174,122,0.04);
+            border: 1px solid rgba(143,174,122,0.12);
+            border-radius: 16px;
+            padding: 22px 12px;
+            text-align: center;
+            transition: border-color 0.3s, background 0.3s;
+        }
+        .stat-card:hover {
+            border-color: rgba(201,164,110,0.25);
+            background: rgba(201,164,110,0.04);
+        }
+        .stat-value {
+            font-family: 'Playfair Display', serif;
+            font-size: 30px;
+            font-weight: 600;
+            color: var(--gold);
+            line-height: 1;
+            margin-bottom: 6px;
+        }
+        .stat-label {
+            font-size: 10px;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            font-weight: 500;
+            color: rgba(240,234,219,0.35);
+        }
+        .clientes-btns { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
+        .clientes-right { position: relative; display: flex; flex-direction: column; gap: 22px; }
+
+        /* GLASSMORPHISM en tarjetas testimonios */
+        .testi-card {
+            position: sticky;
+            background: var(--glass-bg);
+            border: 1px solid rgba(240,234,219,0.08);
+            border-top-color: rgba(240,234,219,0.14);
+            border-left-color: rgba(240,234,219,0.12);
+            border-radius: 20px;
+            padding: 30px 26px;
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            box-shadow:
+                0 8px 32px rgba(0,0,0,0.28),
+                inset 0 1px 0 rgba(255,255,255,0.06),
+                0 0 0 1px rgba(240,234,219,0.03);
+            transition: border-color 0.35s, box-shadow 0.35s, transform 0.35s;
+        }
+        .testi-card:hover {
+            border-color: rgba(143,174,122,0.22);
+            box-shadow:
+                0 12px 44px rgba(0,0,0,0.36),
+                inset 0 1px 0 rgba(255,255,255,0.08),
+                0 0 0 1px rgba(143,174,122,0.06);
+            transform: translateY(-2px);
+        }
+        .testi-header { display: flex; align-items: center; gap: 16px; margin-bottom: 18px; }
+        .testi-avatar {
+            width: 54px; height: 54px;
+            border-radius: 14px;
+            background: linear-gradient(135deg, rgba(143,174,122,0.18), rgba(143,174,122,0.08));
+            border: 1px solid rgba(143,174,122,0.2);
+            display: flex; align-items: center; justify-content: center;
+            color: var(--sage);
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            font-weight: 600;
+            flex-shrink: 0;
+        }
+        .testi-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 17px;
+            font-weight: 500;
+            color: var(--cream-dim);
+        }
+        .testi-title { font-size: 11px; color: rgba(240,234,219,0.35); letter-spacing: 0.1em; text-transform: uppercase; font-weight: 500; }
+        .testi-stars { display: flex; align-items: center; gap: 8px; margin-bottom: 14px; }
+        .testi-rating { font-size: 13px; font-weight: 700; color: rgba(240,234,219,0.8); }
+        .stars { font-size: 13px; color: var(--gold); letter-spacing: 2px; }
+        .testi-quote {
+            font-size: 14px;
+            line-height: 1.8;
+            color: rgba(240,234,219,0.5);
+            font-style: italic;
+            font-weight: 300;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 16px;
+        }
+
+        .reveal-section { will-change: transform, opacity; }
+        @media (max-width: 640px) { .shape-inner { max-width: 80vw !important; } }
+
+        /* ===================================================
+           SCROLL EXPANSION HERO (sin modificar lógica)
+        =================================================== */
+        #scroll-hero { transition: background-color 0.7s ease-in-out; overflow-x: hidden; }
+        .sh-stage {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            min-height: 100vh;
+            min-height: 100dvh;
+        }
+        #sh-bg {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+            height: 100%;
+        }
+        #sh-bg img { width: 100vw; height: 100vh; height: 100dvh; object-fit: cover; object-position: center; }
+        #sh-bg .sh-bg-overlay { position: absolute; inset: 0; background: rgba(22,30,21,0.35); }
+
+        .sh-viewport {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100vh;
+            height: 100dvh;
+            position: relative;
+        }
+        #sh-media {
+            position: absolute;
+            z-index: 0;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 24px;
+            overflow: hidden;
+            max-width: 95vw;
+            max-height: 85vh;
+            box-shadow: 0 0 80px rgba(0,0,0,0.5), 0 0 0 1px rgba(201,164,110,0.12);
+            will-change: width, height;
+        }
+        #sh-media .sh-slide {
+            position: absolute; inset: 0;
+            width: 100%; height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            transition: opacity 1.1s ease-in-out;
+        }
+        #sh-media .sh-slide.active { opacity: 1; }
+        #sh-media .sh-media-overlay {
+            position: absolute; inset: 0;
+            background: rgba(11,20,10,0.5);
+            z-index: 2;
+            transition: opacity 0.2s ease;
+        }
+        #sh-media-caption {
+            position: absolute;
+            left: 50%; bottom: 28px;
+            transform: translateX(-50%);
+            z-index: 3;
+            text-align: center;
+            pointer-events: none;
+            width: 100%;
+        }
+        #sh-media-caption .sh-date {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: clamp(20px, 3vw, 30px);
+            color: var(--gold-light);
+            margin-bottom: 8px;
+        }
+        #sh-media-caption .sh-hint {
+            font-size: 11px;
+            letter-spacing: 0.26em;
+            text-transform: uppercase;
+            font-weight: 500;
+            color: rgba(240,234,219,0.65);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        #sh-media-caption .sh-hint svg { width: 16px; height: 16px; animation: shBounce 1.8s ease-in-out infinite; }
+        @keyframes shBounce { 0%,100% { transform: translateY(0); } 50% { transform: translateY(6px); } }
+
+        #sh-title {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            gap: 4px;
+            width: 100%;
+            position: relative;
+            z-index: 10;
+            pointer-events: none;
+        }
+        #sh-title h2 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            color: var(--cream);
+            font-size: clamp(42px, 8.5vw, 96px);
+            line-height: 1;
+            text-shadow: 0 4px 40px rgba(0,0,0,0.6);
+            will-change: transform;
+        }
+        #sh-reveal {
+            opacity: 0;
+            transition: opacity 0.7s ease;
+        }
+
+        /* ===================================================
+           SECCIÓN SOBRE (nueva — interior)
+        =================================================== */
+        .sobre-icon-wrap {
+            width: 46px; height: 46px;
+            border-radius: 12px;
+            background: rgba(143,174,122,0.08);
+            border: 1px solid rgba(143,174,122,0.16);
+            display: flex; align-items: center; justify-content: center;
+            color: var(--sage); flex-shrink: 0;
+            transition: background 0.25s, border-color 0.25s, transform 0.25s;
+        }
+        .sobre-service-item:hover .sobre-icon-wrap {
+            background: rgba(143,174,122,0.16);
+            border-color: rgba(143,174,122,0.38);
+            transform: scale(1.06);
+        }
+        .sobre-service-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 22px; font-weight: 500;
+            color: var(--cream-dim);
+            transition: color 0.25s;
+        }
+        .sobre-service-item:hover .sobre-service-title { color: var(--sage); }
+        .sobre-service-desc {
+            font-size: 13px; line-height: 1.85;
+            color: rgba(240,234,219,0.32);
+            font-weight: 300;
+            padding-left: 60px;
+            letter-spacing: 0.01em;
+        }
+        .sobre-stat-card {
+            background: rgba(143,174,122,0.04);
+            border: 1px solid rgba(143,174,122,0.1);
+            border-radius: 18px;
+            padding: 30px 16px;
+            display: flex; flex-direction: column; align-items: center; text-align: center;
+            transition: border-color 0.3s, background 0.3s, transform 0.3s;
+        }
+        .sobre-stat-card:hover {
+            background: rgba(143,174,122,0.07);
+            border-color: rgba(201,164,110,0.22);
+            transform: translateY(-3px);
+        }
+        .sobre-stat-icon {
+            width: 50px; height: 50px; border-radius: 50%;
+            background: rgba(143,174,122,0.07);
+            display: flex; align-items: center; justify-content: center;
+            color: var(--sage); margin-bottom: 16px;
+        }
+        .sobre-stat-value {
+            font-family: 'Playfair Display', serif;
+            font-size: 40px; font-weight: 600;
+            color: var(--gold); line-height: 1;
+            display: inline;
+        }
+        .sobre-stat-suffix {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px; font-weight: 500;
+            color: var(--gold); display: inline;
+        }
+        .sobre-stat-label {
+            font-size: 10px; letter-spacing: 0.1em;
+            text-transform: uppercase;
+            font-weight: 500;
+            color: rgba(240,234,219,0.28); margin-top: 10px;
+        }
+        .sobre-stat-line {
+            width: 28px; height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(201,164,110,0.5), transparent);
+            margin-top: 14px;
+            transition: width 0.35s;
+        }
+        .sobre-stat-card:hover .sobre-stat-line { width: 52px; }
+
+        @media (max-width: 900px) {
+            .sobre-nuevo-grid { grid-template-columns: 1fr !important; gap: 52px !important; }
+            .sobre-center-img { width: 100% !important; max-width: 320px; margin: 0 auto; }
+            .sobre-center-img img { aspect-ratio: 4/3 !important; }
+            .sobre-stats-grid { grid-template-columns: repeat(2, 1fr) !important; }
+        }
+        @media (max-width: 560px) {
+            .sobre-stats-grid { grid-template-columns: 1fr 1fr !important; }
+            .sobre-service-desc { padding-left: 0 !important; margin-top: 8px; }
+        }
+
+        /* ===================================================
+           SEPARADORES DE SECCIÓN (más aire)
+        =================================================== */
+        section { padding-top: 140px; padding-bottom: 140px; }
+
+        /* Scroll hint fade-in */
+        @keyframes fadeUp { from { opacity:0; transform:translateY(16px); } to { opacity:1; transform:translateY(0); } }
+        .anim-fade-up { opacity:0; animation: fadeUp 0.7s ease forwards; }
+
+        /* Línea decorativa gradiente */
+        .divider-gold {
+            width: 56px; height: 1px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+            margin: 0 auto 32px;
+        }
+
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- CURSOR FOLLOWER -->
+    <div id="cursor-dot"></div>
+    <div id="cursor-ring"></div>
+
+    <!-- NAVBAR -->
+    <nav id="navbar">
+        <a href="#" class="nav-logo">
+            <img src="images/logo.png" alt="The Coffee Loft" style="height:36px; width:auto; object-fit:contain;">
+        </a>
+        <div class="nav-links">
+            <a href="#sobre" class="nav-hide-sm">Nosotros</a>
+            <a href="#servicios" class="nav-hide-sm">Eventos</a>
+            <a href="#ubicacion" class="nav-hide-sm">Ubicación</a>
+            <a href="#contacto" class="nav-cta">Reservar</a>
+        </div>
+    </nav>
+
+    <!-- WHATSAPP FLOTANTE -->
+    <a id="floating-wa" href="https://wa.me/50683081001?text=Hola%20The%20Coffee%20Loft!%20Quisiera%20más%20información%20para%20reservar%20un%20evento" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+    </a>
+
+    <!-- HERO (scroll expansion — lógica intacta) -->
+    <header id="scroll-hero" style="background:#0f1a0e;">
+        <div class="sh-stage">
+            <div id="sh-bg">
+                <img src="images/fondo.png" alt="The Coffee Loft entre campos de café al atardecer" />
+                <div class="sh-bg-overlay"></div>
+            </div>
+
+            <div class="container mx-auto relative z-10 flex flex-col items-center">
+                <div class="sh-viewport">
+                    <div id="sh-media" style="width:300px; height:400px;">
+                        <img class="sh-slide active" src="images/foto1.png" alt="The Coffee Loft" />
+                        <div class="sh-media-overlay"></div>
+                        <div id="sh-media-caption">
+                            <p class="sh-date">San Rafael · Heredia</p>
+                            <span class="sh-hint">
+                                Desliza para expandir
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"/><path d="m19 12-7 7-7-7"/></svg>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div id="sh-title">
+                        <h2 id="sh-word-left">The Coffee</h2>
+                        <h2 id="sh-word-right">Loft</h2>
+                    </div>
+                </div>
+
+                <div id="sh-reveal"></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- SERVICIOS / EVENTOS -->
+    <section id="servicios" class="reveal-section relative w-full text-white" style="background:transparent; padding: 140px 24px;">
+        <div class="flex flex-col items-center text-center mb-20">
+            <span class="stagger-child" style="display:inline-block; font-size:10px; text-transform:uppercase; letter-spacing:0.3em; color:#8fae7a; font-weight:600; margin-bottom:20px;">Nuestros espacios</span>
+            <h2 class="stagger-child font-serif-display" style="font-weight:500; font-size:clamp(42px,7vw,88px); line-height:1; color:var(--cream);">Eventos & Cafetería</h2>
+            <div class="stagger-child divider-gold" style="margin-top:28px;"></div>
+            <p class="stagger-child" style="margin-top:0; font-size:10px; text-transform:uppercase; letter-spacing:0.35em; font-weight:500; color:rgba(240,234,219,0.28);">Pasa el cursor sobre cada espacio</p>
+        </div>
+
+        <div class="accordion-wrap">
+            <div class="accordion-items" id="accordion-items">
+                <div class="acc-item active">
+                    <img src="images/bodas.png" alt="Bodas y celebraciones entre campos de café" loading="lazy">
+                    <div class="acc-overlay"></div>
+                    <span class="acc-desc">El sí entre cafetales</span>
+                    <span class="acc-label">Bodas</span>
+                </div>
+                <div class="acc-item">
+                    <img src="images/corporativos.png" alt="Eventos corporativos en The Coffee Loft" loading="lazy">
+                    <div class="acc-overlay"></div>
+                    <span class="acc-desc">Reuniones con vista</span>
+                    <span class="acc-label">Corporativos</span>
+                </div>
+                <div class="acc-item">
+                    <img src="images/celebraciones.png" alt="Celebraciones privadas y cumpleaños" loading="lazy">
+                    <div class="acc-overlay"></div>
+                    <span class="acc-desc">Momentos para celebrar</span>
+                    <span class="acc-label">Celebraciones</span>
+                </div>
+                <div class="acc-item">
+                    <img src="images/cafeteria.png" alt="Cafetería de especialidad The Coffee Loft" loading="lazy">
+                    <div class="acc-overlay"></div>
+                    <span class="acc-desc">Café de la zona</span>
+                    <span class="acc-label">Cafetería</span>
+                </div>
+                <div class="acc-item">
+                    <img src="images/catering.png" alt="Servicio de catering y barra de café" loading="lazy">
+                    <div class="acc-overlay"></div>
+                    <span class="acc-desc">Sabores artesanales</span>
+                    <span class="acc-label">Catering</span>
+                </div>
+            </div>
+        </div>
+
+        <div style="display:flex;justify-content:center;margin-top:72px;">
+            <a href="#contacto" class="btn-sage">Cotizar mi evento</a>
+        </div>
+    </section>
+
+    <!-- SOBRE (nuevo) -->
+    <section id="sobre" class="reveal-section" style="background:transparent; padding:140px 24px; border-top:1px solid rgba(143,174,122,0.07); overflow:hidden; position:relative;">
+
+        <!-- Blobs decorativos mejorados -->
+        <div style="position:absolute;top:60px;left:40px;width:380px;height:380px;border-radius:50%;background:radial-gradient(ellipse, rgba(143,174,122,0.07) 0%, transparent 70%);filter:blur(60px);pointer-events:none;"></div>
+        <div style="position:absolute;bottom:60px;right:40px;width:440px;height:440px;border-radius:50%;background:radial-gradient(ellipse, rgba(201,164,110,0.05) 0%, transparent 70%);filter:blur(70px);pointer-events:none;"></div>
+
+        <div style="max-width:1100px; margin:0 auto; position:relative; z-index:1;">
+
+            <!-- Header -->
+            <div style="display:flex;flex-direction:column;align-items:center;text-align:center;margin-bottom:24px;">
+                <span class="stagger-child" style="color:var(--sage);font-size:10px;letter-spacing:0.28em;text-transform:uppercase;font-weight:600;margin-bottom:20px;display:flex;align-items:center;gap:8px;">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    Nuestra historia
+                </span>
+                <h2 class="stagger-child font-serif-display" style="font-size:clamp(36px,5vw,58px);font-weight:500;color:var(--cream-dim);line-height:1.1;margin-bottom:24px;">Quiénes somos</h2>
+                <div class="stagger-child divider-gold"></div>
+                <p class="stagger-child" style="font-size:15px;line-height:1.9;color:var(--cream-muted);font-weight:300;max-width:580px;letter-spacing:0.012em;">
+                    The Coffee Loft nace en San Rafael de Heredia, rodeado de los campos de café que dan identidad a nuestra tierra. Un espacio pensado para celebrar los momentos más importantes, con calidez y detalle.
+                </p>
+            </div>
+
+            <!-- Grid: servicios + imagen + servicios -->
+            <div class="sobre-nuevo-grid" style="display:grid;grid-template-columns:1fr auto 1fr;gap:68px;align-items:center;margin-top:80px;">
+
+                <!-- Columna izquierda -->
+                <div style="display:flex;flex-direction:column;gap:44px;">
+                    <div class="sobre-service-item stagger-child">
+                        <div style="display:flex;align-items:center;gap:14px;margin-bottom:10px;">
+                            <div class="sobre-icon-wrap">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                            </div>
+                            <h3 class="sobre-service-title">Bodas</h3>
+                        </div>
+                        <p class="sobre-service-desc">Celebrá tu día entre cafetales con una vista que no se olvida. Capacidad para hasta 120 invitados en un entorno único.</p>
+                    </div>
+
+                    <div class="sobre-service-item stagger-child">
+                        <div style="display:flex;align-items:center;gap:14px;margin-bottom:10px;">
+                            <div class="sobre-icon-wrap">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>
+                            </div>
+                            <h3 class="sobre-service-title">Corporativos</h3>
+                        </div>
+                        <p class="sobre-service-desc">Retiros, lanzamientos y reuniones estratégicas en un ambiente que inspira y desconecta del ruido de la ciudad.</p>
+                    </div>
+
+                    <div class="sobre-service-item stagger-child">
+                        <div style="display:flex;align-items:center;gap:14px;margin-bottom:10px;">
+                            <div class="sobre-icon-wrap">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+                            </div>
+                            <h3 class="sobre-service-title">Celebraciones</h3>
+                        </div>
+                        <p class="sobre-service-desc">Cumpleaños, quinceañeras y reuniones familiares con el sello especial de un lugar que cuida cada detalle.</p>
+                    </div>
+                </div>
+
+                <!-- Imagen central -->
+                <div style="position:relative;width:260px;flex-shrink:0;" class="sobre-center-img">
+                    <div style="border-radius:20px;overflow:hidden;box-shadow:0 24px 70px rgba(0,0,0,0.55);">
+                        <video id="sobre-video" src="videos/video.mp4" autoplay loop muted playsinline preload="auto" style="width:100%;aspect-ratio:3/4;object-fit:cover;display:block;"></video>
+                    </div>
+                    <!-- Marco decorativo dorado -->
+                    <div style="position:absolute;inset:-12px;border:1px solid rgba(201,164,110,0.22);border-radius:24px;pointer-events:none;z-index:-1;"></div>
+                    <!-- Badge flotante -->
+                    <div style="position:absolute;bottom:-20px;left:50%;transform:translateX(-50%);background:rgba(11,20,10,0.9);border:1px solid rgba(201,164,110,0.28);border-radius:999px;padding:9px 22px;white-space:nowrap;backdrop-filter:blur(14px);">
+                        <span style="font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);font-weight:600;">San Rafael · Heredia</span>
+                    </div>
+                </div>
+
+                <!-- Columna derecha -->
+                <div style="display:flex;flex-direction:column;gap:44px;">
+                    <div class="sobre-service-item stagger-child">
+                        <div style="display:flex;align-items:center;gap:14px;margin-bottom:10px;">
+                            <div class="sobre-icon-wrap">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 8h1a4 4 0 010 8h-1"/><path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+                            </div>
+                            <h3 class="sobre-service-title">Cafetería</h3>
+                        </div>
+                        <p class="sobre-service-desc">Café de especialidad cultivado en la zona. Una experiencia sensorial que forma parte de cada visita al Loft.</p>
+                    </div>
+
+                    <div class="sobre-service-item stagger-child">
+                        <div style="display:flex;align-items:center;gap:14px;margin-bottom:10px;">
+                            <div class="sobre-icon-wrap">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                            </div>
+                            <h3 class="sobre-service-title">Catering</h3>
+                        </div>
+                        <p class="sobre-service-desc">Menús artesanales adaptados a tu evento. Desde bocadillos hasta banquetes completos con productos locales.</p>
+                    </div>
+
+                    <div class="sobre-service-item stagger-child">
+                        <div style="display:flex;align-items:center;gap:14px;margin-bottom:10px;">
+                            <div class="sobre-icon-wrap">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                            </div>
+                            <h3 class="sobre-service-title">Atención 24/7</h3>
+                        </div>
+                        <p class="sobre-service-desc">Coordinamos cada aspecto de tu evento desde la primera consulta hasta el último detalle del día especial.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stats -->
+            <div class="sobre-stats-grid" style="display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:96px;">
+                <div class="sobre-stat-card stagger-child">
+                    <div class="sobre-stat-icon">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 15l-2 5 2-1 2 1-2-5"/><path d="M8.21 13.89L7 23l5-3 5 3-1.21-9.12"/><circle cx="12" cy="8" r="5"/></svg>
+                    </div>
+                    <div class="sobre-stat-value" data-target="80">0</div>
+                    <div class="sobre-stat-suffix">+</div>
+                    <p class="sobre-stat-label">Eventos realizados</p>
+                    <div class="sobre-stat-line"></div>
+                </div>
+                <div class="sobre-stat-card stagger-child">
+                    <div class="sobre-stat-icon">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+                    </div>
+                    <div class="sobre-stat-value" data-target="120">0</div>
+                    <div class="sobre-stat-suffix"></div>
+                    <p class="sobre-stat-label">Capacidad máx.</p>
+                    <div class="sobre-stat-line"></div>
+                </div>
+                <div class="sobre-stat-card stagger-child">
+                    <div class="sobre-stat-icon">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                    </div>
+                    <div class="sobre-stat-value" data-target="3">0</div>
+                    <div class="sobre-stat-suffix">+</div>
+                    <p class="sobre-stat-label">Años de historia</p>
+                    <div class="sobre-stat-line"></div>
+                </div>
+                <div class="sobre-stat-card stagger-child">
+                    <div class="sobre-stat-icon">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                    </div>
+                    <div class="sobre-stat-value" data-target="98">0</div>
+                    <div class="sobre-stat-suffix">%</div>
+                    <p class="sobre-stat-label">Satisfacción</p>
+                    <div class="sobre-stat-line"></div>
+                </div>
+            </div>
+
+            <!-- CTA Banner mejorado -->
+            <div style="margin-top:68px;background:linear-gradient(135deg, rgba(143,174,122,0.07), rgba(201,164,110,0.04));border:1px solid rgba(201,164,110,0.16);border-radius:24px;padding:48px 52px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:28px;backdrop-filter:blur(8px);">
+                <div>
+                    <h3 class="font-serif-display" style="font-size:clamp(22px,3vw,34px);font-weight:500;color:var(--cream-dim);margin-bottom:10px;">¿Listo para crear un momento especial?</h3>
+                    <p style="font-size:14px;color:rgba(240,234,219,0.35);font-weight:300;letter-spacing:0.012em;">Conversemos sobre tu evento — te respondemos en menos de 24 horas.</p>
+                </div>
+                <a href="https://wa.me/50683081001?text=Hola%20The%20Coffee%20Loft!%20Me%20interesa%20reservar%20un%20evento" target="_blank" rel="noopener" class="btn-sage" style="display:inline-flex;align-items:center;gap:10px;flex-shrink:0;">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                    Reservar ahora
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- INFO / STATS / TESTIMONIOS -->
+    <section id="clientes" class="reveal-section clientes-section">
+        <!-- Parallax Background -->
+        <div class="clientes-parallax-bg">
+            <img src="images/fondo.png" alt="">
+        </div>
+        <div class="clientes-inner">
+            <div class="clientes-left">
+                <div class="clientes-tag-wrap">
+                    <span class="clientes-dot"></span>
+                    <span class="clientes-tag-text">Eventos inolvidables</span>
+                </div>
+                <h2 class="clientes-heading">Celebraciones que se convierten en <em>recuerdos queridos.</em></h2>
+                <p class="clientes-desc">Desde bodas íntimas hasta eventos corporativos y celebraciones familiares, en The Coffee Loft cuidamos cada detalle: el entorno, el café y la atención que hacen tu día único.</p>
+
+                <div class="clientes-stats">
+                    <div class="stat-card">
+                        <p class="stat-value">120</p>
+                        <p class="stat-label">Capacidad de invitados</p>
+                    </div>
+                    <div class="stat-card">
+                        <p class="stat-value">5★</p>
+                        <p class="stat-label">Experiencias</p>
+                    </div>
+                    <div class="stat-card">
+                        <p class="stat-value">CR</p>
+                        <p class="stat-label">San Rafael, Heredia</p>
+                    </div>
+                </div>
+
+                <div class="clientes-btns">
+                    <a href="https://www.instagram.com/coffeeloftsanrafael" target="_blank" rel="noopener" class="btn-ig">Ver en Instagram</a>
+                    <a href="#contacto" class="btn-sage">Reservar fecha</a>
+                </div>
+            </div>
+
+            <div class="clientes-right">
+                <div class="testi-card" style="top:90px;">
+                    <div class="testi-header">
+                        <div class="testi-avatar">M</div>
+                        <div>
+                            <p class="testi-name">María & Andrés</p>
+                            <p class="testi-title">Boda</p>
+                        </div>
+                    </div>
+                    <div class="testi-stars"><span class="testi-rating">5.0</span><span class="stars">★★★★★</span></div>
+                    <p class="testi-quote">"El lugar es un sueño. Casarnos entre los cafetales con ese atardecer fue mágico. El equipo cuidó cada detalle y el café estuvo espectacular."</p>
+                </div>
+
+                <div class="testi-card" style="top:120px;">
+                    <div class="testi-header">
+                        <div class="testi-avatar">L</div>
+                        <div>
+                            <p class="testi-name">Laura V.</p>
+                            <p class="testi-title">Evento corporativo</p>
+                        </div>
+                    </div>
+                    <div class="testi-stars"><span class="testi-rating">5.0</span><span class="stars">★★★★★</span></div>
+                    <p class="testi-quote">"Hicimos el retiro de la empresa aquí y fue un éxito. Espacio amplio, vista increíble y una atención impecable. Repetiremos sin duda."</p>
+                </div>
+
+                <div class="testi-card" style="top:150px;">
+                    <div class="testi-header">
+                        <div class="testi-avatar">C</div>
+                        <div>
+                            <p class="testi-name">Carolina S.</p>
+                            <p class="testi-title">Cumpleaños</p>
+                        </div>
+                    </div>
+                    <div class="testi-stars"><span class="testi-rating">5.0</span><span class="stars">★★★★★</span></div>
+                    <p class="testi-quote">"Celebré mi cumpleaños en la cafetería y quedó hermoso. El ambiente es acogedor y el café de la zona es de otro nivel. ¡Mis invitados encantados!"</p>
+                </div>
+
+                <div class="testi-card" style="top:180px;">
+                    <div class="testi-header">
+                        <div class="testi-avatar">J</div>
+                        <div>
+                            <p class="testi-name">Jose & familia</p>
+                            <p class="testi-title">Celebración familiar</p>
+                        </div>
+                    </div>
+                    <div class="testi-stars"><span class="testi-rating">5.0</span><span class="stars">★★★★★</span></div>
+                    <p class="testi-quote">"Un lugar con alma. La conexión con la naturaleza y el café hacen que cualquier celebración se sienta especial. Totalmente recomendado."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- UBICACIÓN -->
+    <section id="ubicacion" class="reveal-section" style="background:transparent; padding:120px 24px; border-top:1px solid rgba(143,174,122,0.07);">
+        <div style="max-width:1000px; margin:0 auto;" class="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+                <span class="sobre-tag">Cómo llegar</span>
+                <h2 class="sobre-heading" style="margin-bottom:20px;">San Rafael de Heredia, entre cafetales.</h2>
+                <p class="sobre-text">Nos encontrás rodeados de los campos de café de San Rafael, Heredia, Costa Rica — un entorno natural a pocos minutos de la ciudad. Escribinos para coordinar tu visita o reservar tu evento.</p>
+                <div class="sobre-social" style="margin-top:28px;">
+                    <a href="https://maps.app.goo.gl/ByP52PJL89NTxwmg7" target="_blank" rel="noopener">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 110-5 2.5 2.5 0 010 5z"/></svg>
+                        Abrir en Google Maps
+                    </a>
+                    <a href="tel:+50683081001">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                        +506 8308-1001
+                    </a>
+                </div>
+            </div>
+            <a href="https://maps.app.goo.gl/ByP52PJL89NTxwmg7" target="_blank" rel="noopener" style="display:block; border-radius:20px; overflow:hidden; border:1px solid rgba(143,174,122,0.15); box-shadow: 0 12px 40px rgba(0,0,0,0.35);">
+                <iframe
+                    title="Ubicación The Coffee Loft en San Rafael, Heredia"
+                    src="https://www.google.com/maps?q=San+Rafael+Heredia+Costa+Rica&output=embed"
+                    width="100%" height="320" style="border:0; display:block; filter:grayscale(0.15) contrast(1.06);"
+                    loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </a>
+        </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section id="contacto" class="reveal-section contacto-section">
+        <div class="contacto-inner">
+            <span class="contacto-tag stagger-child">¿Reservamos?</span>
+            <h2 class="contacto-heading stagger-child">Hagamos tu evento inolvidable.</h2>
+            <p class="contacto-sub stagger-child">Contanos qué tenés en mente — tipo de evento, fecha y cantidad de invitados. Te respondemos en menos de 24 horas.</p>
+            <div class="contacto-btns stagger-child">
+                <a href="https://wa.me/50683081001?text=Hola%20The%20Coffee%20Loft!%20Me%20interesa%20reservar%20para%20un%20evento%20%E2%98%95" target="_blank" rel="noopener" class="btn-wa">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+                    Reservar por WhatsApp
+                </a>
+                <a href="tel:+50683081001" class="btn-ig">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                    +506 8308-1001
+                </a>
+                <a href="https://www.instagram.com/coffeeloftsanrafael" target="_blank" rel="noopener" class="btn-ig">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                    @coffeeloftsanrafael
+                </a>
+                <a href="https://maps.app.goo.gl/ByP52PJL89NTxwmg7" target="_blank" rel="noopener" class="btn-ig">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 110-5 2.5 2.5 0 010 5z"/></svg>
+                    San Rafael, Heredia
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <span class="footer-logo">The Coffee Loft</span>
+        <span class="footer-copy">© 2026 · Todos los derechos reservados</span>
+        <div class="footer-social">
+            <a href="https://wa.me/50683081001" target="_blank" rel="noopener" aria-label="WhatsApp">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+            </a>
+            <a href="https://www.instagram.com/coffeeloftsanrafael" target="_blank" rel="noopener" aria-label="Instagram @coffeeloftsanrafael">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            </a>
+            <a href="https://maps.app.goo.gl/ByP52PJL89NTxwmg7" target="_blank" rel="noopener" aria-label="Google Maps">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 110-5 2.5 2.5 0 010 5z"/></svg>
+            </a>
+        </div>
+    </footer>
+
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        /* ===================================================
+           CURSOR FOLLOWER
+        =================================================== */
+        (function initCursor() {
+            const dot  = document.getElementById('cursor-dot');
+            const ring = document.getElementById('cursor-ring');
+            if (!dot || !ring) return;
+
+            let mouseX = 0, mouseY = 0;
+            let ringX  = 0, ringY  = 0;
+
+            document.addEventListener('mousemove', e => {
+                mouseX = e.clientX; mouseY = e.clientY;
+                gsap.set(dot, { x: mouseX, y: mouseY });
+            });
+
+            // Anillo con suavizado (lag)
+            function animateRing() {
+                ringX += (mouseX - ringX) * 0.12;
+                ringY += (mouseY - ringY) * 0.12;
+                gsap.set(ring, { x: ringX, y: ringY });
+                requestAnimationFrame(animateRing);
+            }
+            animateRing();
+
+            // Reacción a hover en enlaces y botones
+            const hoverTargets = document.querySelectorAll('a, button, .acc-item, .testi-card, .sobre-stat-card');
+            hoverTargets.forEach(el => {
+                el.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
+                el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));
+            });
+        })();
+
+        /* ===================================================
+           SCROLL EXPANSION HERO (lógica original intacta)
+        =================================================== */
+        (function initScrollExpandHero() {
+            const hero      = document.getElementById('scroll-hero');
+            const media     = document.getElementById('sh-media');
+            const bg        = document.getElementById('sh-bg');
+            const overlay   = document.querySelector('#sh-media .sh-media-overlay');
+            const caption   = document.getElementById('sh-media-caption');
+            const wordLeft  = document.getElementById('sh-word-left');
+            const wordRight = document.getElementById('sh-word-right');
+            const reveal    = document.getElementById('sh-reveal');
+            if (!hero || !media) return;
+
+            let progress = 0;
+            let expanded = false;
+            let touchStartY = 0;
+            const isMobile = () => window.innerWidth < 768;
+
+            function render() {
+                const w  = 300 + progress * (isMobile() ? 650 : 1250);
+                const h  = 400 + progress * (isMobile() ? 200 : 400);
+                const tx = progress * (isMobile() ? 22 : 14);
+                media.style.width  = w + 'px';
+                media.style.height = h + 'px';
+                bg.style.opacity = (1 - progress).toFixed(3);
+                if (overlay) overlay.style.opacity = (0.55 - progress * 0.35).toFixed(3);
+                if (caption) caption.style.opacity = Math.max(0, 1 - progress * 1.4).toFixed(3);
+                wordLeft.style.transform  = 'translateX(-' + tx + 'vw)';
+                wordRight.style.transform = 'translateX(' + tx + 'vw)';
+            }
+
+            function setExpanded(state) {
+                expanded = state;
+                reveal.style.opacity = state ? '1' : '0';
+                document.body.style.overflow = state ? '' : 'hidden';
+                if (window._navbarSetScrolled) {
+                    window._navbarSetScrolled(state ? window.scrollY > 60 : false);
+                }
+            }
+
+            const SNAP_THRESHOLD = 0.5;
+            let animating = false;
+            function snapTo(target) {
+                if (animating) return;
+                animating = true;
+                const startP  = progress;
+                const delta   = target - startP;
+                const duration = 600;
+                const start   = performance.now();
+                function tick(now) {
+                    const t = Math.min((now - start) / duration, 1);
+                    const ease = t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
+                    progress = startP + delta * ease;
+                    render();
+                    if (t < 1) { requestAnimationFrame(tick); }
+                    else { progress = target; render(); animating = false; setExpanded(target === 1); }
+                }
+                requestAnimationFrame(tick);
+            }
+
+            function step(delta) {
+                if (animating) return;
+                progress = Math.max(0, Math.min(1, progress + delta));
+                render();
+                if (progress >= 1) { setExpanded(true); }
+                else if (progress <= 0) { setExpanded(false); }
+            }
+
+            function onWheel(e) {
+                if (expanded) return;
+                e.preventDefault();
+                if (progress > 0 && progress < 1) { step(e.deltaY * 0.004); }
+                else if (progress === 0 && e.deltaY > 0) { step(e.deltaY * 0.004); }
+                else if (progress === 1 && e.deltaY < 0) { step(e.deltaY * 0.004); }
+                else if (!expanded) { step(e.deltaY * 0.004); }
+            }
+
+            function onTouchStart(e) { touchStartY = e.touches[0].clientY; }
+            function onTouchMove(e) {
+                if (!touchStartY) return;
+                const deltaY = touchStartY - e.touches[0].clientY;
+                if (expanded && deltaY < 0 && window.scrollY === 0) {
+                    e.preventDefault(); step(deltaY * 0.006); touchStartY = e.touches[0].clientY;
+                } else if (!expanded) {
+                    e.preventDefault(); step(deltaY * (deltaY < 0 ? 0.008 : 0.005)); touchStartY = e.touches[0].clientY;
+                }
+            }
+            function onScroll() { if (!expanded) window.scrollTo(0, 0); }
+
+            window.addEventListener('wheel', onWheel, { passive: false });
+            window.addEventListener('touchstart', onTouchStart, { passive: false });
+            window.addEventListener('touchmove', onTouchMove, { passive: false });
+            window.addEventListener('touchend', () => { touchStartY = 0; });
+            window.addEventListener('scroll', onScroll);
+            window.addEventListener('resize', render);
+
+            setExpanded(false);
+            render();
+        })();
+
+        /* ===================================================
+           ACORDEÓN DE ESPACIOS (mejorado con GSAP)
+        =================================================== */
+        (function initAccordion() {
+            const EXPANDED = 420, COLLAPSED = 70;
+            const items = document.querySelectorAll('#accordion-items .acc-item');
+            if (!items.length) return;
+            function isMobile() { return window.innerWidth <= 768; }
+            function setActive(activeIndex) {
+                items.forEach((el, i) => {
+                    const isActive = i === activeIndex;
+                    el.classList.toggle('active', isActive);
+                    if (isMobile()) {
+                        gsap.to(el, { height: isActive ? 320 : 80, duration: 0.65, ease: 'cubic.inOut' });
+                        el.style.width = '100%';
+                    } else {
+                        gsap.to(el, {
+                            width: (isActive ? EXPANDED : COLLAPSED) + 'px',
+                            duration: 0.75,
+                            ease: 'cubic.inOut'
+                        });
+                        el.style.height = '';
+                    }
+                });
+            }
+            setActive(0);
+            items.forEach((el, i) => {
+                el.addEventListener('mouseenter', () => setActive(i));
+                el.addEventListener('click', () => setActive(i));
+            });
+            window.addEventListener('resize', () => {
+                const current = [...items].findIndex(el => el.classList.contains('active'));
+                setActive(current >= 0 ? current : 0);
+            });
+        })();
+
+        /* ===================================================
+           NAVBAR SCROLL
+        =================================================== */
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (document.body.style.overflow !== 'hidden') {
+                navbar.classList.toggle('scrolled', window.scrollY > 60);
+            }
+        }, { passive: true });
+        window._navbarSetScrolled = function(state) {
+            navbar.classList.toggle('scrolled', state);
+        };
+
+        /* ===================================================
+           SMOOTH SCROLL
+        =================================================== */
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+            });
+        });
+
+        /* ===================================================
+           GSAP SCROLL REVEAL CON STAGGER
+        =================================================== */
+        (function initScrollReveal() {
+            // Sections principales
+            document.querySelectorAll('.reveal-section').forEach(section => {
+                gsap.set(section, { opacity: 0, y: 70 });
+                ScrollTrigger.create({
+                    trigger: section, start: 'top 88%', once: true,
+                    onEnter: () => gsap.to(section, { opacity: 1, y: 0, duration: 1, ease: 'power3.out' })
+                });
+            });
+
+            // Stagger en elementos .stagger-child dentro de cada sección
+            document.querySelectorAll('section').forEach(section => {
+                const children = section.querySelectorAll('.stagger-child');
+                if (!children.length) return;
+                gsap.set(children, { opacity: 0, y: 36 });
+                ScrollTrigger.create({
+                    trigger: section, start: 'top 80%', once: true,
+                    onEnter: () => gsap.to(children, {
+                        opacity: 1, y: 0,
+                        duration: 0.8,
+                        ease: 'power3.out',
+                        stagger: 0.13
+                    })
+                });
+            });
+
+            // Testimonios stagger
+            const testiCards = document.querySelectorAll('.testi-card');
+            if (testiCards.length) {
+                gsap.set(testiCards, { opacity: 0, y: 32 });
+                ScrollTrigger.create({
+                    trigger: testiCards[0].closest('section') || testiCards[0].parentElement,
+                    start: 'top 80%', once: true,
+                    onEnter: () => gsap.to(testiCards, { opacity: 1, y: 0, duration: 0.75, ease: 'power2.out', stagger: 0.14 })
+                });
+            }
+
+            // Acc items stagger
+            const accItems = document.querySelectorAll('.accordion-items .acc-item');
+            if (accItems.length) {
+                gsap.set(accItems, { opacity: 0, scaleY: 0.92, transformOrigin: 'bottom center' });
+                ScrollTrigger.create({
+                    trigger: accItems[0].closest('section') || accItems[0].parentElement,
+                    start: 'top 80%', once: true,
+                    onEnter: () => gsap.to(accItems, {
+                        opacity: 1, scaleY: 1,
+                        duration: 0.7,
+                        ease: 'power2.out',
+                        stagger: 0.09
+                    })
+                });
+            }
+
+            // Stat cards stagger
+            const statCards = document.querySelectorAll('.sobre-stat-card');
+            if (statCards.length) {
+                gsap.set(statCards, { opacity: 0, y: 28 });
+                ScrollTrigger.create({
+                    trigger: statCards[0].closest('section') || statCards[0].parentElement,
+                    start: 'top 82%', once: true,
+                    onEnter: () => gsap.to(statCards, { opacity: 1, y: 0, duration: 0.7, ease: 'power2.out', stagger: 0.1 })
+                });
+            }
+        })();
+
+        /* ===================================================
+           PARALLAX SUTIL EN IMÁGENES DE FONDO
+        =================================================== */
+        (function initParallax() {
+            // Parallax en el hero background
+            const shBgImg = document.querySelector('#sh-bg img');
+            if (shBgImg) {
+                ScrollTrigger.create({
+                    trigger: '#scroll-hero',
+                    start: 'top top',
+                    end: 'bottom top',
+                    scrub: true,
+                    onUpdate: self => {
+                        shBgImg.style.transform = `translateY(${self.progress * 40}px) scale(1.06)`;
+                    }
+                });
+            }
+
+            // Parallax en las imágenes del acordeón
+            document.querySelectorAll('.acc-item img').forEach(img => {
+                gsap.to(img, {
+                    yPercent: -8,
+                    ease: 'none',
+                    scrollTrigger: {
+                        trigger: img.closest('.acc-item'),
+                        start: 'top bottom',
+                        end: 'bottom top',
+                        scrub: 1.2
+                    }
+                });
+            });
+
+            // Parallax en la imagen central de la sección Sobre
+            const centerImg = document.querySelector('.sobre-center-img video');
+            if (centerImg) {
+                gsap.to(centerImg, {
+                    yPercent: -6,
+                    ease: 'none',
+                    scrollTrigger: {
+                        trigger: '.sobre-center-img',
+                        start: 'top bottom',
+                        end: 'bottom top',
+                        scrub: 1.5
+                    }
+                });
+            }
+
+            // Parallax en la sección clientes (reseñas)
+            const clientesParallaxImg = document.querySelector('.clientes-parallax-bg img');
+            if (clientesParallaxImg) {
+                gsap.to(clientesParallaxImg, {
+                    yPercent: 15,
+                    ease: 'none',
+                    scrollTrigger: {
+                        trigger: '#clientes',
+                        start: 'top bottom',
+                        end: 'bottom top',
+                        scrub: 1.2
+                    }
+                });
+            }
+        })();
+
+        /* ===================================================
+           STAT COUNTERS ANIMADOS
+        =================================================== */
+        (function initStatCounters() {
+            const cards = document.querySelectorAll('.sobre-stat-card');
+            if (!cards.length) return;
+            const observed = new Set();
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (!entry.isIntersecting || observed.has(entry.target)) return;
+                    observed.add(entry.target);
+                    const el = entry.target.querySelector('.sobre-stat-value');
+                    if (!el) return;
+                    const target = parseInt(el.dataset.target, 10);
+                    const duration = 1500;
+                    const start = performance.now();
+                    function tick(now) {
+                        const p = Math.min((now - start) / duration, 1);
+                        const ease = 1 - Math.pow(1 - p, 3);
+                        el.textContent = Math.floor(ease * target);
+                        if (p < 1) requestAnimationFrame(tick);
+                    }
+                    requestAnimationFrame(tick);
+                });
+            }, { threshold: 0.4 });
+            cards.forEach(c => observer.observe(c));
+        })();
+
+        /* ===================================================
+           AUTOPLAY DE VIDEO EN iOS
+        =================================================== */
+        (function() {
+            var vid = document.getElementById('sobre-video');
+            if (!vid) return;
+            vid.muted = true;
+            var playPromise = vid.play();
+            if (playPromise !== undefined) {
+                playPromise.catch(function() {
+                    document.addEventListener('touchstart', function tryPlay() {
+                        vid.play();
+                        document.removeEventListener('touchstart', tryPlay);
+                    }, { once: true });
+                });
+            }
+            if ('IntersectionObserver' in window) {
+                var observer = new IntersectionObserver(function(entries) {
+                    entries.forEach(function(entry) {
+                        if (entry.isIntersecting) { vid.play(); }
+                        else { vid.pause(); }
+                    });
+                }, { threshold: 0.25 });
+                observer.observe(vid);
+            }
+        })();
+
+        /* ===================================================
+           FIX SOBRE LAYOUT EN MOBILE
+        =================================================== */
+        if (window.innerWidth <= 768) {
+            document.addEventListener('DOMContentLoaded', function() {
+                var inner = document.getElementById('sobre-inner');
+                if (inner) {
+                    inner.style.cssText = 'display:flex!important;flex-direction:column!important;gap:40px!important;width:100%!important;max-width:100%!important;box-sizing:border-box!important;';
+                    Array.from(inner.children).forEach(function(child) {
+                        child.style.cssText = 'width:100%!important;max-width:100%!important;min-width:0!important;box-sizing:border-box!important;';
+                    });
+                }
+            });
+        }
+    </script>
+</body>
+</html>
