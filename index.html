@@ -1,1719 +1,1492 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Coffee Loft — Eventos & Cafetería · San Rafael, Heredia</title>
-    <meta name="description" content="The Coffee Loft: el lugar perfecto para eventos inolvidables y cafetería de especialidad, rodeado de campos de café en San Rafael, Heredia, Costa Rica.">
-    <meta name="keywords" content="eventos, bodas, cafetería, San Rafael Heredia, Costa Rica, salón de eventos, café de especialidad, The Coffee Loft">
-    <meta property="og:title" content="The Coffee Loft — Eventos & Cafetería">
-    <meta property="og:description" content="El lugar perfecto para eventos inolvidables y recuerdos queridos. Rodeado de campos de café en San Rafael, Heredia.">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="images/og-preview.png">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="The Coffee Loft — Eventos & Cafetería">
-    <meta name="twitter:description" content="Eventos inolvidables y cafetería de especialidad rodeada de campos de café. San Rafael, Heredia.">
-    <!-- Favicon: coffee cup -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%231a2319'/%3E%3Cpath d='M9 12h11v6a4 4 0 0 1-4 4h-3a4 4 0 0 1-4-4z' fill='none' stroke='%23e3b778' stroke-width='1.5'/%3E%3Cpath d='M20 13h2.5a2 2 0 0 1 0 4H20' fill='none' stroke='%23e3b778' stroke-width='1.5'/%3E%3Cpath d='M12 6c-1 1.2-1 2.3 0 3.5M16 6c-1 1.2-1 2.3 0 3.5' fill='none' stroke='%23e3b778' stroke-width='1.2' stroke-linecap='round'/%3E%3C/svg%3E">
-    <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%231a2319'/%3E%3Cpath d='M9 12h11v6a4 4 0 0 1-4 4h-3a4 4 0 0 1-4-4z' fill='none' stroke='%23e3b778' stroke-width='1.5'/%3E%3Cpath d='M20 13h2.5a2 2 0 0 1 0 4H20' fill='none' stroke='%23e3b778' stroke-width='1.5'/%3E%3C/svg%3E">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Coffee Loft San Rafael — San Rafael de Heredia, Costa Rica</title>
+  <meta name="description" content="Un espacio único en las montañas de Costa Rica. Vistas panorámicas, arquitectura elegante, café de especialidad y eventos privados inolvidables." />
 
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon-180.png" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!-- Editorial Serif (títulos) + UI Sans-Serif con tracking amplio -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <!-- Open Graph / WhatsApp / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://coffeeloftsanrafael.com/" />
+  <meta property="og:title" content="Coffee Loft San Rafael — San Rafael de Heredia, Costa Rica" />
+  <meta property="og:description" content="Un espacio único en las montañas de Costa Rica. Vistas panorámicas, arquitectura elegante, café de especialidad y eventos privados inolvidables." />
+  <meta property="og:image" content="https://coffeeloftsanrafael.com/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:locale" content="es_CR" />
 
-    <style>
-        /* ===================================================
-           VARIABLES DE PALETA "LUXURY EARTHY"
-        =================================================== */
-        :root {
-            --forest-deep:   #0f1a0e;
-            --forest-mid:    #152013;
-            --forest-warm:   #1a2a18;
-            --roast-dark:    #1e1810;
-            --roast-mid:     #2a1e12;
-            --sage:          #8fae7a;
-            --sage-bright:   #a8c490;
-            --gold:          #c9a46e;
-            --gold-light:    #e3c89e;
-            --cream:         #f0eadb;
-            --cream-dim:     rgba(240,234,219,0.88);
-            --cream-muted:   rgba(240,234,219,0.45);
-            --cream-ghost:   rgba(240,234,219,0.22);
-            --glass-bg:      rgba(15,26,14,0.45);
-            --glass-border:  rgba(143,174,122,0.18);
-            --glass-glow:    rgba(201,164,110,0.12);
-        }
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Coffee Loft San Rafael — San Rafael de Heredia, Costa Rica" />
+  <meta name="twitter:description" content="Un espacio único en las montañas de Costa Rica. Vistas panorámicas, arquitectura elegante, café de especialidad y eventos privados inolvidables." />
+  <meta name="twitter:image" content="https://coffeeloftsanrafael.com/og-image.png" />
 
-        /* ===================================================
-           BASE
-        =================================================== */
-        html { overflow-x: hidden; scroll-behavior: smooth; }
-        body {
-            /* Gradiente de fondo global: bosque profundo → café tostado */
-            background: linear-gradient(165deg, var(--forest-deep) 0%, var(--forest-mid) 28%, var(--forest-warm) 55%, var(--roast-mid) 80%, var(--roast-dark) 100%);
-            background-attachment: fixed;
-            overflow-x: hidden;
-            font-family: 'Raleway', sans-serif;
-            letter-spacing: 0.01em;
-            cursor: none; /* custom cursor */
-        }
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Cormorant+SC:wght@300;400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;1,9..40,300&display=swap" rel="stylesheet" />
 
-        /* Tipografía editorial */
-        .font-serif-display { font-family: 'Playfair Display', serif; }
-        .font-serif-alt     { font-family: 'Cormorant Garamond', serif; }
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            mountain:  '#1A2B3C',
+            casa:      '#4A7C8E',
+            crema:     '#F7F4EF',
+            jardin:    '#3D5A47',
+            madera:    '#8B5E3C',
+            nube:      '#FAFAF8',
+          },
+          fontFamily: {
+            display: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+            sc:      ['"Cormorant SC"', 'Georgia', 'serif'],
+            body:    ['"DM Sans"', 'system-ui', 'sans-serif'],
+          },
+          letterSpacing: {
+            'ultra': '0.25em',
+            'widest2': '0.4em',
+          },
+          transitionDuration: {
+            '800': '800ms',
+            '1200': '1200ms',
+          },
+        }
+      }
+    }
+  </script>
 
-        /* ===================================================
-           CURSOR FOLLOWER PERSONALIZADO
-        =================================================== */
-        #cursor-dot,
-        #cursor-ring {
-            position: fixed;
-            border-radius: 50%;
-            pointer-events: none;
-            z-index: 9999;
-            will-change: transform;
-        }
-        #cursor-dot {
-            width: 6px; height: 6px;
-            background: var(--sage);
-            top: -3px; left: -3px;
-            transition: transform 0.1s ease, background 0.25s ease;
-        }
-        #cursor-ring {
-            width: 36px; height: 36px;
-            border: 1.5px solid rgba(143,174,122,0.5);
-            top: -18px; left: -18px;
-            transition: width 0.3s ease, height 0.3s ease, border-color 0.3s ease, background 0.3s ease;
-            mix-blend-mode: normal;
-        }
-        body.cursor-hover #cursor-dot  { transform: scale(2); background: var(--gold); }
-        body.cursor-hover #cursor-ring {
-            width: 56px; height: 56px;
-            border-color: rgba(201,164,110,0.55);
-            background: rgba(201,164,110,0.06);
-            top: -28px; left: -28px;
-        }
-        @media (hover: none) {
-            #cursor-dot, #cursor-ring { display: none; }
-            body { cursor: auto; }
-        }
+  <style>
+    /* ─── Base ─────────────────────────────────────── */
+    html { font-size: 16px; }
+    body {
+      font-family: 'DM Sans', system-ui, sans-serif;
+      background-color: #F7F4EF;
+      color: #1A2B3C;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
 
-        /* ===================================================
-           NAVBAR
-        =================================================== */
-        #navbar {
-            position: fixed;
-            top: 0; left: 0; right: 0;
-            z-index: 100;
-            padding: 22px 36px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            transition: background 0.5s ease, padding 0.4s ease, backdrop-filter 0.4s ease;
-        }
-        #navbar.scrolled {
-            background: rgba(11, 20, 10, 0.75);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            padding: 14px 36px;
-            border-bottom: 1px solid rgba(143,174,122,0.1);
-            box-shadow: 0 4px 40px rgba(0,0,0,0.3);
-        }
-        .nav-logo {
-            font-size: 16px;
-            font-weight: 500;
-            letter-spacing: 0.22em;
-            color: var(--cream-dim);
-            text-decoration: none;
-            text-transform: uppercase;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        .nav-logo .logo-mark { width: 26px; height: 26px; color: var(--sage); }
-        .nav-links { display: flex; align-items: center; gap: 36px; }
-        .nav-links a {
-            font-size: 11px;
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
-            color: rgba(240,234,219,0.5);
-            text-decoration: none;
-            transition: color 0.25s;
-            font-weight: 500;
-        }
-        .nav-links a:hover { color: var(--sage-bright); }
-        .nav-cta {
-            font-size: 11px;
-            letter-spacing: 0.16em;
-            text-transform: uppercase;
-            font-weight: 600;
-            color: var(--cream-dim) !important;
-            border: 1px solid rgba(143,174,122,0.4);
-            padding: 9px 22px;
-            border-radius: 999px;
-            transition: background 0.25s, border-color 0.25s, color 0.25s, box-shadow 0.25s !important;
-        }
-        .nav-cta:hover {
-            background: rgba(143,174,122,0.14) !important;
-            border-color: rgba(143,174,122,0.7) !important;
-            color: var(--sage) !important;
-            box-shadow: 0 0 18px rgba(143,174,122,0.15) !important;
-        }
-        @media (max-width: 640px) {
-            .nav-links { gap: 18px; }
-            .nav-links .nav-hide-sm { display: none; }
-            #navbar { padding: 16px 20px; }
-        }
+    /* ─── Reduced motion ────────────────────────────── */
+    @media (prefers-reduced-motion: reduce) {
+      * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+    }
 
-        /* ===================================================
-           FLOATING WHATSAPP
-        =================================================== */
-        #floating-wa {
-            position: fixed;
-            bottom: 30px; right: 30px;
-            z-index: 200;
-            width: 56px; height: 56px;
-            border-radius: 50%;
-            background: #25D366;
-            display: flex; align-items: center; justify-content: center;
-            box-shadow: 0 4px 24px rgba(37,211,102,0.45), 0 0 0 0 rgba(37,211,102,0.3);
-            transition: transform 0.25s, box-shadow 0.25s;
-            text-decoration: none;
-            cursor: pointer;
-        }
-        #floating-wa:hover {
-            transform: scale(1.1);
-            box-shadow: 0 8px 32px rgba(37,211,102,0.55), 0 0 0 8px rgba(37,211,102,0.08);
-        }
-        #floating-wa svg { width: 28px; height: 28px; fill: white; }
+    /* ─── Scroll-expansion hero ─────────────────────── */
+    #hero-expand {
+      position: relative;
+      min-height: 100dvh;
+      overflow: hidden;
+    }
 
-        /* ===================================================
-           SECCIÓN SOBRE
-        =================================================== */
-        .sobre-section {
-            background: transparent;
-            padding: 140px 24px;
-        }
-        .sobre-inner {
-            max-width: 1000px;
-            width: 100%;
-            box-sizing: border-box;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 88px;
-            align-items: center;
-        }
-        @media (max-width: 768px) {
-            .sobre-section { padding: 90px 20px; }
-            .sobre-inner {
-                display: flex !important;
-                flex-direction: column !important;
-                gap: 48px !important;
-                width: 100% !important;
-                max-width: 100% !important;
-                box-sizing: border-box !important;
-            }
-            .sobre-inner > * { width: 100% !important; max-width: 100% !important; box-sizing: border-box !important; min-width: 0 !important; }
-        }
-        .sobre-img-wrap { position: relative; width: 100%; min-width: 0; box-sizing: border-box; }
-        .sobre-img-wrap img {
-            width: 100%;
-            aspect-ratio: 4/5;
-            object-fit: cover;
-            object-position: center center;
-            border-radius: 20px;
-            filter: contrast(1.04) saturate(1.06);
-            display: block;
-        }
-        .sobre-img-wrap::before {
-            content: '';
-            position: absolute;
-            inset: -14px -14px 14px 14px;
-            border: 1px solid rgba(201,164,110,0.18);
-            border-radius: 20px;
-            pointer-events: none;
-        }
-        @media (max-width: 768px) { .sobre-img-wrap::before { display: none; } }
-        .sobre-tag {
-            display: inline-block;
-            font-size: 10px;
-            letter-spacing: 0.28em;
-            text-transform: uppercase;
-            font-weight: 600;
-            color: var(--sage);
-            margin-bottom: 26px;
-        }
-        .sobre-heading {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(32px, 4.5vw, 52px);
-            font-weight: 500;
-            color: var(--cream-dim);
-            line-height: 1.15;
-            margin-bottom: 26px;
-            letter-spacing: -0.01em;
-        }
-        .sobre-text {
-            font-size: 15px;
-            line-height: 1.9;
-            color: var(--cream-muted);
-            font-weight: 300;
-            margin-bottom: 18px;
-            letter-spacing: 0.015em;
-        }
-        .sobre-social { display: flex; flex-wrap: wrap; gap: 18px; margin-top: 36px; width: 100%; box-sizing: border-box; }
-        .sobre-social a {
-            font-size: 11px;
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-            font-weight: 500;
-            color: var(--cream-muted);
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            transition: color 0.25s;
-        }
-        .sobre-social a:hover { color: var(--sage); }
-        .sobre-social svg { width: 16px; height: 16px; flex-shrink: 0; }
+    /* Background image that fades out */
+    #hero-bg-img {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      background-image: url('images/foto2.png');
+      background-size: cover;
+      background-position: center center;
+      transition: opacity 0.1s linear;
+    }
+    #hero-bg-img::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(20, 35, 48, 0.18);
+    }
 
-        /* ===================================================
-           SECCIÓN CONTACTO
-        =================================================== */
-        .contacto-section {
-            background: transparent;
-            padding: 120px 24px 140px;
-            border-top: 1px solid rgba(143,174,122,0.08);
-        }
-        .contacto-inner { max-width: 700px; margin: 0 auto; text-align: center; }
-        .contacto-tag {
-            font-size: 10px;
-            letter-spacing: 0.3em;
-            text-transform: uppercase;
-            font-weight: 600;
-            color: var(--sage);
-            display: block;
-            margin-bottom: 28px;
-        }
-        .contacto-heading {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(38px, 5.5vw, 64px);
-            font-weight: 500;
-            color: var(--cream-dim);
-            line-height: 1.1;
-            margin-bottom: 22px;
-            letter-spacing: -0.01em;
-        }
-        .contacto-sub {
-            font-size: 15px;
-            color: rgba(240,234,219,0.42);
-            line-height: 1.8;
-            font-weight: 300;
-            margin-bottom: 56px;
-            letter-spacing: 0.01em;
-        }
-        .contacto-btns { display: flex; flex-direction: column; align-items: center; gap: 16px; }
+    /* Expanding media container */
+    #hero-media-wrap {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 2;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 0 80px rgba(0,0,0,0.35);
+      transition: width 0s, height 0s;
+      will-change: width, height;
+    }
+    #hero-media-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      border-radius: 16px;
+    }
+    /* Overlay on media that fades as it expands */
+    #hero-media-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(26, 43, 60, 0.45);
+      border-radius: 16px;
+      pointer-events: none;
+      transition: opacity 0.1s linear;
+    }
 
-        /* Botones */
-        .btn-wa {
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            padding: 17px 40px;
-            background: #25D366;
-            color: white;
-            font-size: 12px;
-            font-weight: 600;
-            letter-spacing: 0.14em;
-            text-transform: uppercase;
-            text-decoration: none;
-            border-radius: 999px;
-            transition: background 0.25s, transform 0.25s, box-shadow 0.25s;
-            box-shadow: 0 6px 28px rgba(37,211,102,0.28);
-        }
-        .btn-wa:hover {
-            background: #1ebe5a;
-            transform: translateY(-3px);
-            box-shadow: 0 12px 36px rgba(37,211,102,0.4);
-        }
-        .btn-wa svg { width: 20px; height: 20px; fill: white; flex-shrink: 0; }
-        .btn-ig {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            padding: 12px 30px;
-            background: transparent;
-            color: var(--cream-muted);
-            font-size: 11px;
-            letter-spacing: 0.15em;
-            font-weight: 500;
-            text-transform: uppercase;
-            text-decoration: none;
-            border: 1px solid rgba(143,174,122,0.2);
-            border-radius: 999px;
-            transition: color 0.25s, border-color 0.25s, background 0.25s;
-        }
-        .btn-ig:hover { color: var(--sage); border-color: rgba(143,174,122,0.5); background: rgba(143,174,122,0.05); }
-        .btn-ig svg { width: 16px; height: 16px; flex-shrink: 0; }
-        .btn-sage {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            padding: 15px 36px;
-            background: linear-gradient(135deg, var(--sage) 0%, var(--sage-bright) 100%);
-            color: #0f1a0e;
-            font-size: 12px;
-            font-weight: 700;
-            letter-spacing: 0.12em;
-            text-transform: uppercase;
-            text-decoration: none;
-            border-radius: 999px;
-            transition: transform 0.25s, box-shadow 0.25s, filter 0.25s;
-            box-shadow: 0 4px 20px rgba(143,174,122,0.28);
-        }
-        .btn-sage:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 32px rgba(143,174,122,0.38);
-            filter: brightness(1.06);
-        }
+    /* Title words that split apart */
+    #hero-title-wrap {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 10;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 0.2em;
+      pointer-events: none;
+      mix-blend-mode: normal;
+    }
+    .hero-word {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-weight: 300;
+      letter-spacing: 0.18em;
+      line-height: 1.1;
+      color: #FAFAF8;
+      font-size: clamp(2.6rem, 6vw, 6rem);
+      will-change: transform;
+      transition: none;
+      text-shadow: 0 2px 24px rgba(0,0,0,0.22);
+    }
+    .hero-word em {
+      font-style: italic;
+      font-weight: 300;
+    }
 
-        /* ===================================================
-           FOOTER
-        =================================================== */
-        .footer {
-            background: linear-gradient(to right, var(--forest-deep), var(--roast-dark));
-            border-top: 1px solid rgba(143,174,122,0.08);
-            padding: 40px 36px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 16px;
-        }
-        .footer-logo {
-            font-size: 13px;
-            letter-spacing: 0.22em;
-            text-transform: uppercase;
-            font-weight: 500;
-            color: rgba(240,234,219,0.45);
-        }
-        .footer-copy { font-size: 11px; color: rgba(240,234,219,0.18); letter-spacing: 0.06em; }
-        .footer-social { display: flex; gap: 22px; }
-        .footer-social a {
-            color: rgba(240,234,219,0.28);
-            transition: color 0.25s;
-            text-decoration: none;
-        }
-        .footer-social a:hover { color: var(--sage); }
-        .footer-social svg { width: 18px; height: 18px; display: block; }
+    /* Sub-labels below/above the media */
+    #hero-meta {
+      position: absolute;
+      bottom: calc(50% - v-offset);
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 10;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.75rem;
+      pointer-events: none;
+      text-align: center;
+      width: 100%;
+    }
+    .hero-meta-line {
+      font-family: 'Cormorant SC', serif;
+      font-weight: 300;
+      letter-spacing: 0.35em;
+      font-size: 0.65rem;
+      color: rgba(250, 250, 248, 0.55);
+      will-change: transform, opacity;
+    }
 
-        /* ===================================================
-           ACORDEÓN DE SERVICIOS (mejorado)
-        =================================================== */
-        .accordion-wrap { max-width: 1200px; margin: 0 auto; overflow: hidden; }
-        .accordion-items {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            min-height: 460px;
-        }
-        .acc-item {
-            position: relative;
-            height: 460px;
-            border-radius: 24px; /* bordes más orgánicos */
-            overflow: hidden;
-            cursor: pointer;
-            transition: width 0.75s cubic-bezier(0.4, 0, 0.2, 1);
-            flex-shrink: 0;
-        }
-        .acc-item img {
-            position: absolute; inset: 0;
-            width: 100%; height: 100%;
-            object-fit: cover;
-            transition: transform 0.75s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        .acc-item.active img,
-        .acc-item:hover img { transform: scale(1.04); }
-        .acc-item .acc-overlay {
-            position: absolute; inset: 0;
-            background: linear-gradient(to top, rgba(11,20,10,0.88) 0%, rgba(11,20,10,0.3) 60%, transparent 100%);
-            transition: background 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        .acc-item:hover .acc-overlay,
-        .acc-item.active .acc-overlay {
-            background: linear-gradient(to top, rgba(11,20,10,0.75) 0%, rgba(11,20,10,0.15) 55%, transparent 100%);
-        }
-        .acc-label {
-            position: absolute;
-            bottom: 30px; left: 50%;
-            color: var(--cream-dim);
-            font-family: 'Playfair Display', serif;
-            font-size: 18px;
-            font-weight: 500;
-            white-space: nowrap;
-            transition: all 0.45s cubic-bezier(0.4, 0, 0.2, 1);
-            pointer-events: none;
-        }
-        .acc-item:not(.active) .acc-label {
-            bottom: auto; top: 50%;
-            transform-origin: center center;
-            transform: translateX(-50%) translateY(-50%) rotate(90deg);
-            left: 50%;
-            font-size: 14px;
-            letter-spacing: 0.1em;
-        }
-        .acc-item.active .acc-label { transform: translateX(-50%); bottom: 30px; top: auto; }
-        .acc-desc {
-            position: absolute;
-            bottom: 68px; left: 0; right: 0;
-            text-align: center;
-            font-size: 10px;
-            letter-spacing: 0.24em;
-            text-transform: uppercase;
-            font-weight: 600;
-            color: var(--sage);
-            opacity: 0;
-            transition: opacity 0.5s ease 0.25s, transform 0.5s ease 0.25s;
-            transform: translateY(6px);
-        }
-        .acc-item.active .acc-desc {
-            opacity: 1;
-            transform: translateY(0);
-        }
+    /* Content that appears after full expansion */
+    #hero-after-content {
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.7s ease;
+    }
+    #hero-after-content.visible {
+      opacity: 1;
+      pointer-events: auto;
+    }
 
-        /* Línea dorada en acc-item activo */
-        .acc-item::after {
-            content: '';
-            position: absolute;
-            bottom: 0; left: 50%;
-            transform: translateX(-50%);
-            width: 0;
-            height: 2px;
-            background: linear-gradient(90deg, transparent, var(--gold), transparent);
-            transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        .acc-item.active::after { width: 80%; }
+    /* Lock scroll when hero not yet expanded */
+    body.hero-locked {
+      overflow: hidden;
+      height: 100dvh;
+    }
 
-        @media (max-width: 768px) {
-            .accordion-items { flex-direction: column; align-items: stretch; gap: 8px; }
-            .acc-item { width: 100% !important; height: 80px !important; border-radius: 16px; transition: height 0.65s cubic-bezier(0.4, 0, 0.2, 1); }
-            .acc-item.active { height: 320px !important; }
-            .acc-item:not(.active) .acc-label { transform: translateX(-50%); top: auto; bottom: 22px; left: 50%; }
-        }
+    /* ─── Scroll reveal ─────────────────────────────── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(32px);
+      transition: opacity 900ms cubic-bezier(0.22, 1, 0.36, 1),
+                  transform 900ms cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .reveal-delay-1 { transition-delay: 120ms; }
+    .reveal-delay-2 { transition-delay: 240ms; }
+    .reveal-delay-3 { transition-delay: 360ms; }
+    .reveal-delay-4 { transition-delay: 480ms; }
 
-        /* ===================================================
-           SECCIÓN INFO / STATS (clientes)
-        =================================================== */
-        .clientes-section {
-            background: transparent;
-            padding: 120px 24px;
-            border-top: 1px solid rgba(143,174,122,0.07);
-            position: relative;
-            overflow: hidden;
-        }
-        .clientes-parallax-bg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            z-index: 0;
-            overflow: hidden;
-        }
-        .clientes-parallax-bg img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center;
-        }
-        .clientes-inner {
-            max-width: 1100px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 88px;
-            align-items: start;
-            position: relative;
-            z-index: 1;
-        }
-        @media (max-width: 900px) { .clientes-inner { grid-template-columns: 1fr; gap: 64px; } }
-        .clientes-left { position: sticky; top: 90px; }
-        .clientes-tag-wrap {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            border: 1px solid rgba(143,174,122,0.22);
-            background: rgba(143,174,122,0.05);
-            padding: 5px 16px;
-            border-radius: 999px;
-            margin-bottom: 32px;
-        }
-        .clientes-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--sage); flex-shrink: 0; }
-        .clientes-tag-text {
-            font-size: 11px;
-            letter-spacing: 0.14em;
-            font-weight: 500;
-            color: rgba(240,234,219,0.5);
-            text-transform: uppercase;
-        }
-        .clientes-heading {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(32px, 4vw, 50px);
-            font-weight: 500;
-            color: var(--cream-dim);
-            line-height: 1.15;
-            letter-spacing: -0.01em;
-            margin-bottom: 22px;
-        }
-        .clientes-heading em { font-style: italic; color: var(--sage); }
-        .clientes-desc {
-            font-size: 15px;
-            line-height: 1.85;
-            color: rgba(240,234,219,0.42);
-            font-weight: 300;
-            margin-bottom: 40px;
-            letter-spacing: 0.012em;
-        }
-        .clientes-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-bottom: 40px; }
-        .stat-card {
-            background: rgba(143,174,122,0.04);
-            border: 1px solid rgba(143,174,122,0.12);
-            border-radius: 16px;
-            padding: 22px 12px;
-            text-align: center;
-            transition: border-color 0.3s, background 0.3s;
-        }
-        .stat-card:hover {
-            border-color: rgba(201,164,110,0.25);
-            background: rgba(201,164,110,0.04);
-        }
-        .stat-value {
-            font-family: 'Playfair Display', serif;
-            font-size: 30px;
-            font-weight: 600;
-            color: var(--gold);
-            line-height: 1;
-            margin-bottom: 6px;
-        }
-        .stat-label {
-            font-size: 10px;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            font-weight: 500;
-            color: rgba(240,234,219,0.35);
-        }
-        .clientes-btns { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
-        .clientes-right { position: relative; display: flex; flex-direction: column; gap: 22px; }
+    /* ─── Eyebrow labels ─────────────────────────────── */
+    .eyebrow {
+      font-family: 'Cormorant SC', Georgia, serif;
+      font-weight: 300;
+      letter-spacing: 0.35em;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+    }
 
-        /* GLASSMORPHISM en tarjetas testimonios */
-        .testi-card {
-            position: sticky;
-            background: var(--glass-bg);
-            border: 1px solid rgba(240,234,219,0.08);
-            border-top-color: rgba(240,234,219,0.14);
-            border-left-color: rgba(240,234,219,0.12);
-            border-radius: 20px;
-            padding: 30px 26px;
-            backdrop-filter: blur(18px);
-            -webkit-backdrop-filter: blur(18px);
-            box-shadow:
-                0 8px 32px rgba(0,0,0,0.28),
-                inset 0 1px 0 rgba(255,255,255,0.06),
-                0 0 0 1px rgba(240,234,219,0.03);
-            transition: border-color 0.35s, box-shadow 0.35s, transform 0.35s;
-        }
-        .testi-card:hover {
-            border-color: rgba(143,174,122,0.22);
-            box-shadow:
-                0 12px 44px rgba(0,0,0,0.36),
-                inset 0 1px 0 rgba(255,255,255,0.08),
-                0 0 0 1px rgba(143,174,122,0.06);
-            transform: translateY(-2px);
-        }
-        .testi-header { display: flex; align-items: center; gap: 16px; margin-bottom: 18px; }
-        .testi-avatar {
-            width: 54px; height: 54px;
-            border-radius: 14px;
-            background: linear-gradient(135deg, rgba(143,174,122,0.18), rgba(143,174,122,0.08));
-            border: 1px solid rgba(143,174,122,0.2);
-            display: flex; align-items: center; justify-content: center;
-            color: var(--sage);
-            font-family: 'Playfair Display', serif;
-            font-size: 24px;
-            font-weight: 600;
-            flex-shrink: 0;
-        }
-        .testi-name {
-            font-family: 'Playfair Display', serif;
-            font-size: 17px;
-            font-weight: 500;
-            color: var(--cream-dim);
-        }
-        .testi-title { font-size: 11px; color: rgba(240,234,219,0.35); letter-spacing: 0.1em; text-transform: uppercase; font-weight: 500; }
-        .testi-stars { display: flex; align-items: center; gap: 8px; margin-bottom: 14px; }
-        .testi-rating { font-size: 13px; font-weight: 700; color: rgba(240,234,219,0.8); }
-        .stars { font-size: 13px; color: var(--gold); letter-spacing: 2px; }
-        .testi-quote {
-            font-size: 14px;
-            line-height: 1.8;
-            color: rgba(240,234,219,0.5);
-            font-style: italic;
-            font-weight: 300;
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 16px;
-        }
+    /* ─── Hairline divider ──────────────────────────── */
+    .hairline {
+      height: 1px;
+      background: currentColor;
+      opacity: 0.15;
+    }
 
-        .reveal-section { will-change: transform, opacity; }
-        @media (max-width: 640px) { .shape-inner { max-width: 80vw !important; } }
+    /* ─── Nav ──────────────────────────────────────── */
+    nav {
+      transition: background 600ms ease, box-shadow 600ms ease;
+    }
+    nav.scrolled {
+      background: rgba(247, 244, 239, 0.96) !important;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 1px 0 rgba(26, 43, 60, 0.08);
+    }
+    .nav-link {
+      font-family: 'Cormorant SC', serif;
+      letter-spacing: 0.2em;
+      font-size: 0.68rem;
+      color: inherit;
+      transition: opacity 300ms;
+    }
+    .nav-link:hover { opacity: 0.5; }
 
-        /* ===================================================
-           SCROLL EXPANSION HERO (sin modificar lógica)
-        =================================================== */
-        #scroll-hero { transition: background-color 0.7s ease-in-out; overflow-x: hidden; }
-        .sh-stage {
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: flex-start;
-            min-height: 100vh;
-            min-height: 100dvh;
-        }
-        #sh-bg {
-            position: absolute;
-            inset: 0;
-            z-index: 0;
-            height: 100%;
-        }
-        #sh-bg img { width: 100vw; height: 100vh; height: 100dvh; object-fit: cover; object-position: center; }
-        #sh-bg .sh-bg-overlay { position: absolute; inset: 0; background: rgba(22,30,21,0.35); }
+    /* ─── Image hover ────────────────────────────────── */
+    .img-zoom {
+      overflow: hidden;
+    }
+    .img-zoom img {
+      transition: transform 800ms cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .img-zoom:hover img {
+      transform: scale(1.04);
+    }
 
-        .sh-viewport {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            width: 100%;
-            height: 100vh;
-            height: 100dvh;
-            position: relative;
-        }
-        #sh-media {
-            position: absolute;
-            z-index: 0;
-            top: 50%; left: 50%;
-            transform: translate(-50%, -50%);
-            border-radius: 24px;
-            overflow: hidden;
-            max-width: 95vw;
-            max-height: 85vh;
-            box-shadow: 0 0 80px rgba(0,0,0,0.5), 0 0 0 1px rgba(201,164,110,0.12);
-            will-change: width, height;
-        }
-        #sh-media .sh-slide {
-            position: absolute; inset: 0;
-            width: 100%; height: 100%;
-            object-fit: cover;
-            opacity: 0;
-            transition: opacity 1.1s ease-in-out;
-        }
-        #sh-media .sh-slide.active { opacity: 1; }
-        #sh-media .sh-media-overlay {
-            position: absolute; inset: 0;
-            background: rgba(11,20,10,0.5);
-            z-index: 2;
-            transition: opacity 0.2s ease;
-        }
-        #sh-media-caption {
-            position: absolute;
-            left: 50%; bottom: 28px;
-            transform: translateX(-50%);
-            z-index: 3;
-            text-align: center;
-            pointer-events: none;
-            width: 100%;
-        }
-        #sh-media-caption .sh-date {
-            font-family: 'Playfair Display', serif;
-            font-style: italic;
-            font-size: clamp(20px, 3vw, 30px);
-            color: var(--gold-light);
-            margin-bottom: 8px;
-        }
-        #sh-media-caption .sh-hint {
-            font-size: 11px;
-            letter-spacing: 0.26em;
-            text-transform: uppercase;
-            font-weight: 500;
-            color: rgba(240,234,219,0.65);
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-        }
-        #sh-media-caption .sh-hint svg { width: 16px; height: 16px; animation: shBounce 1.8s ease-in-out infinite; }
-        @keyframes shBounce { 0%,100% { transform: translateY(0); } 50% { transform: translateY(6px); } }
+    /* ─── Experience card ────────────────────────────── */
+    .exp-card {
+      border-top: 1px solid rgba(26, 43, 60, 0.12);
+      transition: border-color 400ms;
+    }
+    .exp-card:hover {
+      border-color: #4A7C8E;
+    }
 
-        #sh-title {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            gap: 4px;
-            width: 100%;
-            position: relative;
-            z-index: 10;
-            pointer-events: none;
-        }
-        #sh-title h2 {
-            font-family: 'Playfair Display', serif;
-            font-weight: 600;
-            color: var(--cream);
-            font-size: clamp(42px, 8.5vw, 96px);
-            line-height: 1;
-            text-shadow: 0 4px 40px rgba(0,0,0,0.6);
-            will-change: transform;
-        }
-        #sh-reveal {
-            opacity: 0;
-            transition: opacity 0.7s ease;
-        }
+    /* ─── CTA button ─────────────────────────────────── */
+    .btn-primary {
+      font-family: 'Cormorant SC', serif;
+      letter-spacing: 0.3em;
+      font-size: 0.72rem;
+      border: 1px solid #1A2B3C;
+      transition: background 400ms, color 400ms;
+      display: inline-block;
+    }
+    .btn-primary:hover {
+      background: #1A2B3C;
+      color: #FAFAF8;
+    }
+    .btn-light {
+      font-family: 'Cormorant SC', serif;
+      letter-spacing: 0.3em;
+      font-size: 0.72rem;
+      border: 1px solid rgba(250, 250, 248, 0.6);
+      color: #FAFAF8;
+      transition: background 400ms, color 400ms, border-color 400ms;
+      display: inline-block;
+    }
+    .btn-light:hover {
+      background: rgba(250, 250, 248, 0.15);
+      border-color: #FAFAF8;
+    }
 
-        /* ===================================================
-           SECCIÓN SOBRE (nueva — interior)
-        =================================================== */
-        .sobre-icon-wrap {
-            width: 46px; height: 46px;
-            border-radius: 12px;
-            background: rgba(143,174,122,0.08);
-            border: 1px solid rgba(143,174,122,0.16);
-            display: flex; align-items: center; justify-content: center;
-            color: var(--sage); flex-shrink: 0;
-            transition: background 0.25s, border-color 0.25s, transform 0.25s;
-        }
-        .sobre-service-item:hover .sobre-icon-wrap {
-            background: rgba(143,174,122,0.16);
-            border-color: rgba(143,174,122,0.38);
-            transform: scale(1.06);
-        }
-        .sobre-service-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 22px; font-weight: 500;
-            color: var(--cream-dim);
-            transition: color 0.25s;
-        }
-        .sobre-service-item:hover .sobre-service-title { color: var(--sage); }
-        .sobre-service-desc {
-            font-size: 13px; line-height: 1.85;
-            color: rgba(240,234,219,0.32);
-            font-weight: 300;
-            padding-left: 60px;
-            letter-spacing: 0.01em;
-        }
-        .sobre-stat-card {
-            background: rgba(143,174,122,0.04);
-            border: 1px solid rgba(143,174,122,0.1);
-            border-radius: 18px;
-            padding: 30px 16px;
-            display: flex; flex-direction: column; align-items: center; text-align: center;
-            transition: border-color 0.3s, background 0.3s, transform 0.3s;
-        }
-        .sobre-stat-card:hover {
-            background: rgba(143,174,122,0.07);
-            border-color: rgba(201,164,110,0.22);
-            transform: translateY(-3px);
-        }
-        .sobre-stat-icon {
-            width: 50px; height: 50px; border-radius: 50%;
-            background: rgba(143,174,122,0.07);
-            display: flex; align-items: center; justify-content: center;
-            color: var(--sage); margin-bottom: 16px;
-        }
-        .sobre-stat-value {
-            font-family: 'Playfair Display', serif;
-            font-size: 40px; font-weight: 600;
-            color: var(--gold); line-height: 1;
-            display: inline;
-        }
-        .sobre-stat-suffix {
-            font-family: 'Playfair Display', serif;
-            font-size: 28px; font-weight: 500;
-            color: var(--gold); display: inline;
-        }
-        .sobre-stat-label {
-            font-size: 10px; letter-spacing: 0.1em;
-            text-transform: uppercase;
-            font-weight: 500;
-            color: rgba(240,234,219,0.28); margin-top: 10px;
-        }
-        .sobre-stat-line {
-            width: 28px; height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(201,164,110,0.5), transparent);
-            margin-top: 14px;
-            transition: width 0.35s;
-        }
-        .sobre-stat-card:hover .sobre-stat-line { width: 52px; }
+    /* ─── Accordion gallery ──────────────────────────── */
+    .acc-track {
+      display: flex;
+      width: 100%;
+      height: 520px;
+      overflow: hidden;
+      gap: 6px;
+    }
+    .acc-panel {
+      position: relative;
+      flex: 1 1 0%;
+      overflow: hidden;
+      cursor: pointer;
+      border: 1px solid #2a3d4e;
+      background: #0e1a24;
+      transition:
+        flex 700ms cubic-bezier(0.65, 0, 0.35, 1),
+        border-color 400ms ease;
+      will-change: flex;
+    }
+    .acc-panel.acc-active {
+      flex: 7 1 0%;
+      border-color: rgba(250, 250, 248, 0.18);
+    }
+    .acc-panel-bg {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      transition: transform 700ms cubic-bezier(0.65, 0, 0.35, 1),
+                  filter 700ms ease;
+      transform: scale(1.06);
+      filter: saturate(0.7) brightness(0.75);
+    }
+    .acc-panel.acc-active .acc-panel-bg {
+      transform: scale(1);
+      filter: saturate(0.88) brightness(0.82);
+    }
+    /* Bottom shadow scrim */
+    .acc-scrim {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      transition: opacity 700ms ease;
+      opacity: 0;
+      background: linear-gradient(to top, rgba(14,26,36,0.85) 0%, rgba(14,26,36,0.2) 55%, transparent 100%);
+    }
+    .acc-panel.acc-active .acc-scrim { opacity: 1; }
 
-        @media (max-width: 900px) {
-            .sobre-nuevo-grid { grid-template-columns: 1fr !important; gap: 52px !important; }
-            .sobre-center-img { width: 100% !important; max-width: 320px; margin: 0 auto; }
-            .sobre-center-img img { aspect-ratio: 4/3 !important; }
-            .sobre-stats-grid { grid-template-columns: repeat(2, 1fr) !important; }
-        }
-        @media (max-width: 560px) {
-            .sobre-stats-grid { grid-template-columns: 1fr 1fr !important; }
-            .sobre-service-desc { padding-left: 0 !important; margin-top: 8px; }
-        }
+    /* Label row */
+    .acc-label {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      z-index: 4;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 0 20px 22px;
+      pointer-events: none;
+    }
+    /* Icon bubble */
+    .acc-icon {
+      flex-shrink: 0;
+      width: 40px; height: 40px;
+      border-radius: 50%;
+      background: rgba(26, 43, 60, 0.82);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(250,250,248,0.18);
+      display: flex; align-items: center; justify-content: center;
+      transition: border-color 400ms;
+    }
+    .acc-panel.acc-active .acc-icon {
+      border-color: rgba(250,250,248,0.45);
+    }
+    .acc-icon svg { width: 16px; height: 16px; fill: #FAFAF8; opacity: 0.85; }
 
-        /* ===================================================
-           SEPARADORES DE SECCIÓN (más aire)
-        =================================================== */
-        section { padding-top: 140px; padding-bottom: 140px; }
+    /* Text inside label */
+    .acc-info { overflow: hidden; }
+    .acc-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 400;
+      font-size: 1.15rem;
+      letter-spacing: 0.06em;
+      color: #FAFAF8;
+      white-space: nowrap;
+      opacity: 0;
+      transform: translateX(20px);
+      transition: opacity 500ms ease 100ms, transform 500ms ease 100ms;
+    }
+    .acc-sub {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      color: rgba(250,250,248,0.55);
+      white-space: nowrap;
+      opacity: 0;
+      transform: translateX(20px);
+      transition: opacity 500ms ease 180ms, transform 500ms ease 180ms;
+    }
+    .acc-panel.acc-active .acc-title,
+    .acc-panel.acc-active .acc-sub {
+      opacity: 1;
+      transform: translateX(0);
+    }
 
-        /* Scroll hint fade-in */
-        @keyframes fadeUp { from { opacity:0; transform:translateY(16px); } to { opacity:1; transform:translateY(0); } }
-        .anim-fade-up { opacity:0; animation: fadeUp 0.7s ease forwards; }
+    /* Slide-in animation on first load */
+    .acc-panel {
+      opacity: 0;
+      transform: translateX(-40px);
+    }
+    .acc-panel.acc-visible {
+      opacity: 1;
+      transform: translateX(0);
+      transition:
+        opacity 600ms ease,
+        transform 600ms cubic-bezier(0.22, 1, 0.36, 1),
+        flex 700ms cubic-bezier(0.65, 0, 0.35, 1),
+        border-color 400ms ease;
+    }
 
-        /* Línea decorativa gradiente */
-        .divider-gold {
-            width: 56px; height: 1px;
-            background: linear-gradient(90deg, transparent, var(--gold), transparent);
-            margin: 0 auto 32px;
-        }
+    /* Mobile: stack vertically */
+    @media (max-width: 768px) {
+      .acc-track {
+        flex-direction: column;
+        height: auto;
+        gap: 4px;
+      }
+      .acc-panel {
+        flex: none !important;
+        height: 72px;
+        transition: height 700ms cubic-bezier(0.65, 0, 0.35, 1),
+                    border-color 400ms ease,
+                    opacity 600ms ease,
+                    transform 600ms cubic-bezier(0.22, 1, 0.36, 1);
+      }
+      .acc-panel.acc-active {
+        height: 340px;
+      }
+      .acc-panel.acc-visible {
+        transition:
+          opacity 600ms ease,
+          transform 600ms cubic-bezier(0.22, 1, 0.36, 1),
+          height 700ms cubic-bezier(0.65, 0, 0.35, 1),
+          border-color 400ms ease;
+      }
+    }
 
-    </style>
+    /* ─── Quote mark ─────────────────────────────────── */
+    .big-quote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(4rem, 10vw, 8rem);
+      line-height: 1;
+      color: rgba(74, 124, 142, 0.12);
+      user-select: none;
+    }
+
+    /* ─── Panorama section ───────────────────────────── */
+    .panorama-bg {
+      background-image: url('images/lugares.png');
+      background-size: cover;
+      background-position: center 30%;
+      background-attachment: fixed;
+    }
+
+    @media (max-width: 768px) {
+      .panorama-bg { background-attachment: scroll; }
+    }
+
+    /* ─── Page load fade ─────────────────────────────── */
+    .page-loader {
+      position: fixed;
+      inset: 0;
+      background: #1A2B3C;
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: opacity 800ms ease 400ms, visibility 800ms ease 400ms;
+    }
+    .page-loader.hidden {
+      opacity: 0;
+      visibility: hidden;
+    }
+    .loader-logo {
+      font-family: 'Cormorant SC', serif;
+      font-weight: 300;
+      letter-spacing: 0.4em;
+      color: #FAFAF8;
+      font-size: 1rem;
+      opacity: 0;
+      animation: fadeInOut 1.6s ease forwards;
+    }
+    @keyframes fadeInOut {
+      0%   { opacity: 0; }
+      40%  { opacity: 1; }
+      80%  { opacity: 1; }
+      100% { opacity: 0; }
+    }
+
+    /* ─── Thin horizontal rule ───────────────────────── */
+    .rule { height: 1px; background: rgba(26, 43, 60, 0.1); }
+  </style>
 </head>
-<body class="antialiased">
 
-    <!-- CURSOR FOLLOWER -->
-    <div id="cursor-dot"></div>
-    <div id="cursor-ring"></div>
+<body class="bg-crema text-mountain">
 
-    <!-- NAVBAR -->
-    <nav id="navbar">
-        <a href="#" class="nav-logo">
-            <img src="images/logo.png" alt="The Coffee Loft" style="height:36px; width:auto; object-fit:contain;">
-        </a>
-        <div class="nav-links">
-            <a href="#sobre" class="nav-hide-sm">Nosotros</a>
-            <a href="#servicios" class="nav-hide-sm">Eventos</a>
-            <a href="#ubicacion" class="nav-hide-sm">Ubicación</a>
-            <a href="#contacto" class="nav-cta">Reservar</a>
-        </div>
-    </nav>
+  <!-- ─── PAGE LOADER ─────────────────────────────────── -->
+  <div class="page-loader" id="loader">
+    <span class="loader-logo">Coffee Loft</span>
+  </div>
 
-    <!-- WHATSAPP FLOTANTE -->
-    <a id="floating-wa" href="https://wa.me/50683081001?text=Hola%20The%20Coffee%20Loft!%20Quisiera%20más%20información%20para%20reservar%20un%20evento" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+  <!-- ─── NAVIGATION ──────────────────────────────────── -->
+  <nav id="nav" class="fixed top-0 left-0 right-0 z-50 px-8 py-6 flex items-center justify-between">
+    <!-- Logo -->
+    <a href="#" class="flex flex-col leading-none">
+      <span style="font-family:'Cormorant Garamond',serif; font-weight:300; letter-spacing:0.12em; font-size:1.15rem; color:#FAFAF8;" id="nav-logo">Coffee Loft</span>
+      <span style="font-family:'Cormorant SC',serif; font-weight:300; letter-spacing:0.3em; font-size:0.55rem; color:rgba(250,250,248,0.55); margin-top:2px;" id="nav-sub">San Rafael · Costa Rica</span>
     </a>
 
-    <!-- HERO (scroll expansion — lógica intacta) -->
-    <header id="scroll-hero" style="background:#0f1a0e;">
-        <div class="sh-stage">
-            <div id="sh-bg">
-                <img src="images/fondo1.png" alt="The Coffee Loft entre campos de café al atardecer" />
-                <div class="sh-bg-overlay"></div>
-            </div>
+    <!-- Desktop links -->
+    <div class="hidden md:flex items-center gap-10">
+      <a href="#sobre" class="nav-link text-nube" id="nav-l1">El Lugar</a>
+      <a href="#experiencias" class="nav-link text-nube" id="nav-l2">Experiencias</a>
+      <a href="#eventos" class="nav-link text-nube" id="nav-l3">Eventos</a>
+      <a href="#reservas" class="btn-light py-2.5 px-7 text-xs" id="nav-cta">Reservar</a>
+    </div>
 
-            <div class="container mx-auto relative z-10 flex flex-col items-center">
-                <div class="sh-viewport">
-                    <div id="sh-media" style="width:300px; height:400px;">
-                        <img class="sh-slide active" src="images/foto1.png" alt="The Coffee Loft" />
-                        <div class="sh-media-overlay"></div>
-                        <div id="sh-media-caption">
-                            <p class="sh-date">San Rafael · Heredia</p>
-                            <span class="sh-hint">
-                                Desliza para expandir
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"/><path d="m19 12-7 7-7-7"/></svg>
-                            </span>
-                        </div>
-                    </div>
+    <!-- Mobile menu button -->
+    <button class="md:hidden flex flex-col gap-1.5 p-1" id="mobile-btn" aria-label="Menú">
+      <span class="w-6 h-px bg-nube block" id="mb1"></span>
+      <span class="w-4 h-px bg-nube block" id="mb2"></span>
+    </button>
+  </nav>
 
-                    <div id="sh-title">
-                        <h2 id="sh-word-left">The Coffee</h2>
-                        <h2 id="sh-word-right">Loft</h2>
-                    </div>
-                </div>
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="fixed inset-0 z-40 bg-mountain flex-col items-center justify-center hidden">
+    <div class="flex flex-col items-center gap-10 text-center">
+      <a href="#sobre" class="mobile-nav-link" onclick="closeMobile()">
+        <span style="font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:300;letter-spacing:0.1em;color:#FAFAF8;">El Lugar</span>
+      </a>
+      <a href="#experiencias" class="mobile-nav-link" onclick="closeMobile()">
+        <span style="font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:300;letter-spacing:0.1em;color:#FAFAF8;">Experiencias</span>
+      </a>
+      <a href="#eventos" class="mobile-nav-link" onclick="closeMobile()">
+        <span style="font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:300;letter-spacing:0.1em;color:#FAFAF8;">Eventos</span>
+      </a>
+      <a href="#reservas" onclick="closeMobile()">
+        <span style="font-family:'Cormorant SC',serif;letter-spacing:0.3em;font-size:0.75rem;color:#FAFAF8;border:1px solid rgba(250,250,248,0.4);padding:14px 32px;">Reservar</span>
+      </a>
+    </div>
+  </div>
 
-                <div id="sh-reveal"></div>
-            </div>
+  <!-- ─── 1. HERO — Scroll Expansion ─────────────────── -->
+  <section id="hero-expand">
+
+    <!-- Background that fades as media expands -->
+    <div id="hero-bg-img"></div>
+
+    <!-- Top vignette for nav readability -->
+    <div style="position:absolute;inset-x:0;top:0;height:160px;background:linear-gradient(to bottom, rgba(26,43,60,0.45) 0%, transparent 100%);z-index:3;pointer-events:none;"></div>
+
+    <!-- Expanding media (image) -->
+    <div id="hero-media-wrap">
+      <img
+        src="images/foto.png"
+        alt="Coffee Loft San Rafael — Vista panorámica"
+      />
+      <div id="hero-media-overlay"></div>
+    </div>
+
+    <!-- Title: two words that fly apart -->
+    <div id="hero-title-wrap">
+      <span class="hero-word" id="hw1">Donde la montaña</span>
+      <span class="hero-word" id="hw2"><em>se detiene</em></span>
+    </div>
+
+    <!-- Meta labels: location & scroll hint that slide out -->
+    <div style="position:absolute;bottom:0;left:0;right:0;z-index:10;display:flex;flex-direction:column;align-items:center;padding-bottom:2.5rem;gap:0.75rem;pointer-events:none;">
+      <span class="hero-meta-line" id="hm-loc">San Rafael de Heredia · Costa Rica</span>
+      <span class="hero-meta-line" id="hm-scroll" style="display:flex;align-items:center;gap:0.6rem;">
+        <span style="display:inline-block;width:1px;height:36px;background:rgba(250,250,248,0.35);"></span>
+        Scroll para descubrir
+      </span>
+    </div>
+
+  </section>
+
+  <!-- ─── 2. SOBRE EL LUGAR ────────────────────────────── -->
+  <section class="py-28 md:py-40 px-8 md:px-16 lg:px-24" id="sobre">
+    <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 md:gap-24 items-center">
+
+      <!-- Text -->
+      <div class="reveal">
+        <p class="eyebrow text-casa mb-8">El Lugar</p>
+        <h2 style="font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(2rem,4vw,3.5rem);line-height:1.2;letter-spacing:0.02em;margin-bottom:2rem;">
+          Una propiedad única<br /><em>entre los cafetales</em>
+        </h2>
+        <div class="rule mb-8"></div>
+        <p class="text-mountain/70 leading-loose mb-6" style="font-size:0.95rem; max-width:44ch;">
+          Coffee Loft San Rafael es una finca privada en las alturas de Heredia, diseñada para quienes buscan algo más que un destino: una experiencia que permanece.
+        </p>
+        <p class="text-mountain/60 leading-loose" style="font-size:0.9rem; max-width:44ch;">
+          Arquitectura artesanal, jardines que se funden con el paisaje, y la calidez silenciosa de las montañas de Costa Rica como escenario permanente.
+        </p>
+
+        <div class="mt-12 grid grid-cols-2 gap-8">
+          <div>
+            <p style="font-family:'Cormorant Garamond',serif;font-weight:300;font-size:2.2rem;color:#4A7C8E;">1,200<span style="font-size:1.2rem">m</span></p>
+            <p class="eyebrow text-mountain/40 mt-1">Sobre el nivel del mar</p>
+          </div>
+          <div>
+            <p style="font-family:'Cormorant Garamond',serif;font-weight:300;font-size:2.2rem;color:#4A7C8E;">360°</p>
+            <p class="eyebrow text-mountain/40 mt-1">Vistas panorámicas</p>
+          </div>
         </div>
-    </header>
+      </div>
 
-    <!-- SERVICIOS / EVENTOS -->
-    <section id="servicios" class="reveal-section relative w-full text-white" style="background:transparent; padding: 140px 24px;">
-        <div class="flex flex-col items-center text-center mb-20">
-            <span class="stagger-child" style="display:inline-block; font-size:10px; text-transform:uppercase; letter-spacing:0.3em; color:#8fae7a; font-weight:600; margin-bottom:20px;">Nuestros espacios</span>
-            <h2 class="stagger-child font-serif-display" style="font-weight:500; font-size:clamp(42px,7vw,88px); line-height:1; color:var(--cream);">Eventos & Cafetería</h2>
-            <div class="stagger-child divider-gold" style="margin-top:28px;"></div>
-            <p class="stagger-child" style="margin-top:0; font-size:10px; text-transform:uppercase; letter-spacing:0.35em; font-weight:500; color:rgba(240,234,219,0.28);">Pasa el cursor sobre cada espacio</p>
+      <!-- Image -->
+      <div class="reveal reveal-delay-1 img-zoom" style="aspect-ratio:3/4;">
+        <img
+          src="images/ellugar.png"
+          alt="Vista de la propiedad Coffee Loft San Rafael"
+          class="w-full h-full object-cover"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── 3. GALERÍA ACORDEÓN ─────────────────────────── -->
+  <section class="px-4 md:px-8 pb-28 md:pb-40" id="galeria">
+    <div class="max-w-7xl mx-auto">
+
+      <div class="reveal text-center mb-14">
+        <p class="eyebrow text-casa mb-5">Arquitectura · Naturaleza · Atmósfera</p>
+        <h2 style="font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(1.8rem,3.5vw,3rem);letter-spacing:0.04em;">El espacio habla por sí solo</h2>
+      </div>
+
+      <!-- Accordion track -->
+      <div class="acc-track" id="acc-track">
+
+        <!-- Panel 1 — Arquitectura -->
+        <div class="acc-panel acc-active" data-acc="0">
+          <div class="acc-panel-bg" style="background-image:url('images/arquictectura.png');"></div>
+          <div class="acc-scrim"></div>
+          <div class="acc-label">
+            <div class="acc-icon">
+              <!-- House -->
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 12L12 3l9 9M5 10v9a1 1 0 001 1h4v-5h4v5h4a1 1 0 001-1v-9" stroke="#FAFAF8" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <div class="acc-info">
+              <p class="acc-title">Arquitectura</p>
+              <p class="acc-sub">Diseño artesanal en madera</p>
+            </div>
+          </div>
         </div>
 
-        <div class="accordion-wrap">
-            <div class="accordion-items" id="accordion-items">
-                <div class="acc-item active">
-                    <img src="images/bodas.png" alt="Bodas y celebraciones entre campos de café" loading="lazy">
-                    <div class="acc-overlay"></div>
-                    <span class="acc-desc">El sí entre cafetales</span>
-                    <span class="acc-label">Bodas</span>
-                </div>
-                <div class="acc-item">
-                    <img src="images/corporativos.png" alt="Eventos corporativos en The Coffee Loft" loading="lazy">
-                    <div class="acc-overlay"></div>
-                    <span class="acc-desc">Reuniones con vista</span>
-                    <span class="acc-label">Corporativos</span>
-                </div>
-                <div class="acc-item">
-                    <img src="images/celebraciones.png" alt="Celebraciones privadas y cumpleaños" loading="lazy">
-                    <div class="acc-overlay"></div>
-                    <span class="acc-desc">Momentos para celebrar</span>
-                    <span class="acc-label">Celebraciones</span>
-                </div>
-                <div class="acc-item">
-                    <img src="images/cafeteria.png" alt="Cafetería de especialidad The Coffee Loft" loading="lazy">
-                    <div class="acc-overlay"></div>
-                    <span class="acc-desc">Café de la zona</span>
-                    <span class="acc-label">Cafetería</span>
-                </div>
-                <div class="acc-item">
-                    <img src="images/catering.png" alt="Servicio de catering y barra de café" loading="lazy">
-                    <div class="acc-overlay"></div>
-                    <span class="acc-desc">Sabores artesanales</span>
-                    <span class="acc-label">Catering</span>
-                </div>
+        <!-- Panel 2 — Jardines -->
+        <div class="acc-panel" data-acc="1">
+          <div class="acc-panel-bg" style="background-image:url('images/jardin.png');"></div>
+          <div class="acc-scrim"></div>
+          <div class="acc-label">
+            <div class="acc-icon">
+              <!-- Leaf -->
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 8C8 10 5.9 16.17 3.82 19.54A1 1 0 004.69 21 25.19 25.19 0 0115 14c-1 3-2 4.5-5 6" stroke="#FAFAF8" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </div>
+            <div class="acc-info">
+              <p class="acc-title">Jardines</p>
+              <p class="acc-sub">Naturaleza en cada rincón</p>
+            </div>
+          </div>
         </div>
 
-        <div style="display:flex;justify-content:center;margin-top:72px;">
-            <a href="#contacto" class="btn-sage">Cotizar mi evento</a>
+        <!-- Panel 3 — Café -->
+        <div class="acc-panel" data-acc="2">
+          <div class="acc-panel-bg" style="background-image:url('images/cafe.png');"></div>
+          <div class="acc-scrim"></div>
+          <div class="acc-label">
+            <div class="acc-icon">
+              <!-- Coffee -->
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18 8h1a4 4 0 010 8h-1M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8zM6 2v2M10 2v2M14 2v2" stroke="#FAFAF8" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <div class="acc-info">
+              <p class="acc-title">Café de especialidad</p>
+              <p class="acc-sub">Granos del volcán Barva</p>
+            </div>
+          </div>
         </div>
-    </section>
 
-    <!-- SOBRE (nuevo) -->
-    <section id="sobre" class="reveal-section" style="background:transparent; padding:140px 24px; border-top:1px solid rgba(143,174,122,0.07); overflow:hidden; position:relative;">
-
-        <!-- Blobs decorativos mejorados -->
-        <div style="position:absolute;top:60px;left:40px;width:380px;height:380px;border-radius:50%;background:radial-gradient(ellipse, rgba(143,174,122,0.07) 0%, transparent 70%);filter:blur(60px);pointer-events:none;"></div>
-        <div style="position:absolute;bottom:60px;right:40px;width:440px;height:440px;border-radius:50%;background:radial-gradient(ellipse, rgba(201,164,110,0.05) 0%, transparent 70%);filter:blur(70px);pointer-events:none;"></div>
-
-        <div style="max-width:1100px; margin:0 auto; position:relative; z-index:1;">
-
-            <!-- Header -->
-            <div style="display:flex;flex-direction:column;align-items:center;text-align:center;margin-bottom:24px;">
-                <span class="stagger-child" style="color:var(--sage);font-size:10px;letter-spacing:0.28em;text-transform:uppercase;font-weight:600;margin-bottom:20px;display:flex;align-items:center;gap:8px;">
-                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                    Nuestra historia
-                </span>
-                <h2 class="stagger-child font-serif-display" style="font-size:clamp(36px,5vw,58px);font-weight:500;color:var(--cream-dim);line-height:1.1;margin-bottom:24px;">Quiénes somos</h2>
-                <div class="stagger-child divider-gold"></div>
-                <p class="stagger-child" style="font-size:15px;line-height:1.9;color:var(--cream-muted);font-weight:300;max-width:580px;letter-spacing:0.012em;">
-                    The Coffee Loft nace en San Rafael de Heredia, rodeado de los campos de café que dan identidad a nuestra tierra. Un espacio pensado para celebrar los momentos más importantes, con calidez y detalle.
-                </p>
+        <!-- Panel 4 — Vista -->
+        <div class="acc-panel" data-acc="3">
+          <div class="acc-panel-bg" style="background-image:url('images/panoramica.png');"></div>
+          <div class="acc-scrim"></div>
+          <div class="acc-label">
+            <div class="acc-icon">
+              <!-- Mountain -->
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 20l6.5-13 4 7 2.5-4L21 20H3z" stroke="#FAFAF8" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </div>
-
-            <!-- Grid: servicios + imagen + servicios -->
-            <div class="sobre-nuevo-grid" style="display:grid;grid-template-columns:1fr auto 1fr;gap:68px;align-items:center;margin-top:80px;">
-
-                <!-- Columna izquierda -->
-                <div style="display:flex;flex-direction:column;gap:44px;">
-                    <div class="sobre-service-item stagger-child">
-                        <div style="display:flex;align-items:center;gap:14px;margin-bottom:10px;">
-                            <div class="sobre-icon-wrap">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-                            </div>
-                            <h3 class="sobre-service-title">Bodas</h3>
-                        </div>
-                        <p class="sobre-service-desc">Celebrá tu día entre cafetales con una vista que no se olvida. Capacidad para hasta 120 invitados en un entorno único.</p>
-                    </div>
-
-                    <div class="sobre-service-item stagger-child">
-                        <div style="display:flex;align-items:center;gap:14px;margin-bottom:10px;">
-                            <div class="sobre-icon-wrap">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>
-                            </div>
-                            <h3 class="sobre-service-title">Corporativos</h3>
-                        </div>
-                        <p class="sobre-service-desc">Retiros, lanzamientos y reuniones estratégicas en un ambiente que inspira y desconecta del ruido de la ciudad.</p>
-                    </div>
-
-                    <div class="sobre-service-item stagger-child">
-                        <div style="display:flex;align-items:center;gap:14px;margin-bottom:10px;">
-                            <div class="sobre-icon-wrap">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
-                            </div>
-                            <h3 class="sobre-service-title">Celebraciones</h3>
-                        </div>
-                        <p class="sobre-service-desc">Cumpleaños, quinceañeras y reuniones familiares con el sello especial de un lugar que cuida cada detalle.</p>
-                    </div>
-                </div>
-
-                <!-- Imagen central -->
-                <div style="position:relative;width:260px;flex-shrink:0;" class="sobre-center-img">
-                    <div style="border-radius:20px;overflow:hidden;box-shadow:0 24px 70px rgba(0,0,0,0.55);">
-                        <video id="sobre-video" src="videos/video.mp4" autoplay loop muted playsinline preload="auto" style="width:100%;aspect-ratio:3/4;object-fit:cover;display:block;"></video>
-                    </div>
-                    <!-- Marco decorativo dorado -->
-                    <div style="position:absolute;inset:-12px;border:1px solid rgba(201,164,110,0.22);border-radius:24px;pointer-events:none;z-index:-1;"></div>
-                    <!-- Badge flotante -->
-                    <div style="position:absolute;bottom:-20px;left:50%;transform:translateX(-50%);background:rgba(11,20,10,0.9);border:1px solid rgba(201,164,110,0.28);border-radius:999px;padding:9px 22px;white-space:nowrap;backdrop-filter:blur(14px);">
-                        <span style="font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);font-weight:600;">San Rafael · Heredia</span>
-                    </div>
-                </div>
-
-                <!-- Columna derecha -->
-                <div style="display:flex;flex-direction:column;gap:44px;">
-                    <div class="sobre-service-item stagger-child">
-                        <div style="display:flex;align-items:center;gap:14px;margin-bottom:10px;">
-                            <div class="sobre-icon-wrap">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 8h1a4 4 0 010 8h-1"/><path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
-                            </div>
-                            <h3 class="sobre-service-title">Cafetería</h3>
-                        </div>
-                        <p class="sobre-service-desc">Café de especialidad cultivado en la zona. Una experiencia sensorial que forma parte de cada visita al Loft.</p>
-                    </div>
-
-                    <div class="sobre-service-item stagger-child">
-                        <div style="display:flex;align-items:center;gap:14px;margin-bottom:10px;">
-                            <div class="sobre-icon-wrap">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                            </div>
-                            <h3 class="sobre-service-title">Catering</h3>
-                        </div>
-                        <p class="sobre-service-desc">Menús artesanales adaptados a tu evento. Desde bocadillos hasta banquetes completos con productos locales.</p>
-                    </div>
-
-                    <div class="sobre-service-item stagger-child">
-                        <div style="display:flex;align-items:center;gap:14px;margin-bottom:10px;">
-                            <div class="sobre-icon-wrap">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                            </div>
-                            <h3 class="sobre-service-title">Atención 24/7</h3>
-                        </div>
-                        <p class="sobre-service-desc">Coordinamos cada aspecto de tu evento desde la primera consulta hasta el último detalle del día especial.</p>
-                    </div>
-                </div>
+            <div class="acc-info">
+              <p class="acc-title">Vista panorámica</p>
+              <p class="acc-sub">Valle Central y volcán Barva</p>
             </div>
-
-            <!-- Stats -->
-            <div class="sobre-stats-grid" style="display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:96px;">
-                <div class="sobre-stat-card stagger-child">
-                    <div class="sobre-stat-icon">
-                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 15l-2 5 2-1 2 1-2-5"/><path d="M8.21 13.89L7 23l5-3 5 3-1.21-9.12"/><circle cx="12" cy="8" r="5"/></svg>
-                    </div>
-                    <div class="sobre-stat-value" data-target="80">0</div>
-                    <div class="sobre-stat-suffix">+</div>
-                    <p class="sobre-stat-label">Eventos realizados</p>
-                    <div class="sobre-stat-line"></div>
-                </div>
-                <div class="sobre-stat-card stagger-child">
-                    <div class="sobre-stat-icon">
-                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
-                    </div>
-                    <div class="sobre-stat-value" data-target="120">0</div>
-                    <div class="sobre-stat-suffix"></div>
-                    <p class="sobre-stat-label">Capacidad máx.</p>
-                    <div class="sobre-stat-line"></div>
-                </div>
-                <div class="sobre-stat-card stagger-child">
-                    <div class="sobre-stat-icon">
-                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-                    </div>
-                    <div class="sobre-stat-value" data-target="3">0</div>
-                    <div class="sobre-stat-suffix">+</div>
-                    <p class="sobre-stat-label">Años de historia</p>
-                    <div class="sobre-stat-line"></div>
-                </div>
-                <div class="sobre-stat-card stagger-child">
-                    <div class="sobre-stat-icon">
-                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-                    </div>
-                    <div class="sobre-stat-value" data-target="98">0</div>
-                    <div class="sobre-stat-suffix">%</div>
-                    <p class="sobre-stat-label">Satisfacción</p>
-                    <div class="sobre-stat-line"></div>
-                </div>
-            </div>
-
-            <!-- CTA Banner mejorado -->
-            <div style="margin-top:68px;background:linear-gradient(135deg, rgba(143,174,122,0.07), rgba(201,164,110,0.04));border:1px solid rgba(201,164,110,0.16);border-radius:24px;padding:48px 52px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:28px;backdrop-filter:blur(8px);">
-                <div>
-                    <h3 class="font-serif-display" style="font-size:clamp(22px,3vw,34px);font-weight:500;color:var(--cream-dim);margin-bottom:10px;">¿Listo para crear un momento especial?</h3>
-                    <p style="font-size:14px;color:rgba(240,234,219,0.35);font-weight:300;letter-spacing:0.012em;">Conversemos sobre tu evento — te respondemos en menos de 24 horas.</p>
-                </div>
-                <a href="https://wa.me/50683081001?text=Hola%20The%20Coffee%20Loft!%20Me%20interesa%20reservar%20un%20evento" target="_blank" rel="noopener" class="btn-sage" style="display:inline-flex;align-items:center;gap:10px;flex-shrink:0;">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-                    Reservar ahora
-                </a>
-            </div>
-
+          </div>
         </div>
-    </section>
 
-    <!-- INFO / STATS / TESTIMONIOS -->
-    <section id="clientes" class="reveal-section clientes-section">
-        <!-- Parallax Background -->
-        <div class="clientes-parallax-bg">
-            <img src="images/fondo.png" alt="">
-        </div>
-        <div class="clientes-inner">
-            <div class="clientes-left">
-                <div class="clientes-tag-wrap">
-                    <span class="clientes-dot"></span>
-                    <span class="clientes-tag-text">Eventos inolvidables</span>
-                </div>
-                <h2 class="clientes-heading">Celebraciones que se convierten en <em>recuerdos queridos.</em></h2>
-                <p class="clientes-desc">Desde bodas íntimas hasta eventos corporativos y celebraciones familiares, en The Coffee Loft cuidamos cada detalle: el entorno, el café y la atención que hacen tu día único.</p>
-
-                <div class="clientes-stats">
-                    <div class="stat-card">
-                        <p class="stat-value">120</p>
-                        <p class="stat-label">Capacidad de invitados</p>
-                    </div>
-                    <div class="stat-card">
-                        <p class="stat-value">5★</p>
-                        <p class="stat-label">Experiencias</p>
-                    </div>
-                    <div class="stat-card">
-                        <p class="stat-value">CR</p>
-                        <p class="stat-label">San Rafael, Heredia</p>
-                    </div>
-                </div>
-
-                <div class="clientes-btns">
-                    <a href="https://www.instagram.com/coffeeloftsanrafael" target="_blank" rel="noopener" class="btn-ig">Ver en Instagram</a>
-                    <a href="#contacto" class="btn-sage">Reservar fecha</a>
-                </div>
+        <!-- Panel 5 — Eventos -->
+        <div class="acc-panel" data-acc="4">
+          <div class="acc-panel-bg" style="background-image:url('images/eventos.png');"></div>
+          <div class="acc-scrim"></div>
+          <div class="acc-label">
+            <div class="acc-icon">
+              <!-- Star -->
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" stroke="#FAFAF8" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </div>
-
-            <div class="clientes-right">
-                <div class="testi-card" style="top:90px;">
-                    <div class="testi-header">
-                        <div class="testi-avatar">M</div>
-                        <div>
-                            <p class="testi-name">María & Andrés</p>
-                            <p class="testi-title">Boda</p>
-                        </div>
-                    </div>
-                    <div class="testi-stars"><span class="testi-rating">5.0</span><span class="stars">★★★★★</span></div>
-                    <p class="testi-quote">"El lugar es un sueño. Casarnos entre los cafetales con ese atardecer fue mágico. El equipo cuidó cada detalle y el café estuvo espectacular."</p>
-                </div>
-
-                <div class="testi-card" style="top:120px;">
-                    <div class="testi-header">
-                        <div class="testi-avatar">L</div>
-                        <div>
-                            <p class="testi-name">Laura V.</p>
-                            <p class="testi-title">Evento corporativo</p>
-                        </div>
-                    </div>
-                    <div class="testi-stars"><span class="testi-rating">5.0</span><span class="stars">★★★★★</span></div>
-                    <p class="testi-quote">"Hicimos el retiro de la empresa aquí y fue un éxito. Espacio amplio, vista increíble y una atención impecable. Repetiremos sin duda."</p>
-                </div>
-
-                <div class="testi-card" style="top:150px;">
-                    <div class="testi-header">
-                        <div class="testi-avatar">C</div>
-                        <div>
-                            <p class="testi-name">Carolina S.</p>
-                            <p class="testi-title">Cumpleaños</p>
-                        </div>
-                    </div>
-                    <div class="testi-stars"><span class="testi-rating">5.0</span><span class="stars">★★★★★</span></div>
-                    <p class="testi-quote">"Celebré mi cumpleaños en la cafetería y quedó hermoso. El ambiente es acogedor y el café de la zona es de otro nivel. ¡Mis invitados encantados!"</p>
-                </div>
-
-                <div class="testi-card" style="top:180px;">
-                    <div class="testi-header">
-                        <div class="testi-avatar">J</div>
-                        <div>
-                            <p class="testi-name">Jose & familia</p>
-                            <p class="testi-title">Celebración familiar</p>
-                        </div>
-                    </div>
-                    <div class="testi-stars"><span class="testi-rating">5.0</span><span class="stars">★★★★★</span></div>
-                    <p class="testi-quote">"Un lugar con alma. La conexión con la naturaleza y el café hacen que cualquier celebración se sienta especial. Totalmente recomendado."</p>
-                </div>
+            <div class="acc-info">
+              <p class="acc-title">Eventos privados</p>
+              <p class="acc-sub">Bodas y celebraciones</p>
             </div>
+          </div>
         </div>
-    </section>
 
-    <!-- UBICACIÓN -->
-    <section id="ubicacion" class="reveal-section" style="background:transparent; padding:120px 24px; border-top:1px solid rgba(143,174,122,0.07);">
-        <div style="max-width:1000px; margin:0 auto;" class="grid md:grid-cols-2 gap-12 items-center">
+      </div><!-- /acc-track -->
+    </div>
+  </section>
+
+  <!-- ─── 4. EXPERIENCIAS ──────────────────────────────── -->
+  <section class="py-24 md:py-40 px-8 md:px-16 lg:px-24 bg-nube" id="experiencias">
+    <div class="max-w-6xl mx-auto">
+
+      <div class="reveal mb-20 md:mb-28">
+        <p class="eyebrow text-casa mb-5">Lo que ofrecemos</p>
+        <div class="flex items-end justify-between flex-wrap gap-8">
+          <h2 style="font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(2rem,4vw,3.5rem);letter-spacing:0.02em;max-width:18ch;line-height:1.25;">
+            Experiencias diseñadas para <em>recordarse</em>
+          </h2>
+          <div class="hidden md:flex flex-col items-end gap-8" style="max-width:32ch;">
+            <p class="text-mountain/55 leading-loose text-right" style="font-size:0.9rem;">
+              Cada visita a Coffee Loft es distinta. Venís a tomar café, a celebrar, a fotografiar. Lo que no cambia es la sensación de haber encontrado algo especial.
+            </p>
+            <a href="#reservas" class="btn-primary py-3 px-8 text-xs">Consultar disponibilidad</a>
+          </div>
+          <a href="#reservas" class="btn-primary py-3 px-8 text-xs md:hidden">Consultar disponibilidad</a>
+        </div>
+      </div>
+
+      <!-- Experience cards -->
+      <div class="grid md:grid-cols-3 gap-0">
+
+        <!-- Café -->
+        <div class="exp-card pt-10 pb-12 pr-8 reveal">
+          <div class="mb-8">
+            <!-- Icon: coffee cup minimal -->
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M6 12h16v10a5 5 0 01-5 5H11a5 5 0 01-5-5V12z" stroke="#4A7C8E" stroke-width="1.2" fill="none"/>
+              <path d="M22 14h2a3 3 0 010 6h-2" stroke="#4A7C8E" stroke-width="1.2" fill="none"/>
+              <path d="M11 7c0-2 2-2 2-4M16 7c0-2 2-2 2-4" stroke="#4A7C8E" stroke-width="1" stroke-linecap="round" fill="none"/>
+            </svg>
+          </div>
+          <p class="eyebrow text-mountain/40 mb-4">01</p>
+          <h3 style="font-family:'Cormorant Garamond',serif;font-weight:400;font-size:1.6rem;margin-bottom:1rem;">Café de especialidad</h3>
+          <p class="text-mountain/60 leading-loose" style="font-size:0.88rem;">
+            Granos cultivados en las laderas del Barva. Preparaciones de origen en un ambiente que invita a la pausa.
+          </p>
+        </div>
+
+        <!-- Eventos -->
+        <div class="exp-card pt-10 pb-12 pr-8 md:pl-8 reveal reveal-delay-1">
+          <div class="mb-8">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="5" y="8" width="22" height="19" rx="2" stroke="#4A7C8E" stroke-width="1.2" fill="none"/>
+              <path d="M5 13h22" stroke="#4A7C8E" stroke-width="1.2"/>
+              <path d="M11 5v5M21 5v5" stroke="#4A7C8E" stroke-width="1.2" stroke-linecap="round"/>
+              <rect x="9" y="17" width="4" height="4" rx="0.5" stroke="#4A7C8E" stroke-width="1" fill="none"/>
+            </svg>
+          </div>
+          <p class="eyebrow text-mountain/40 mb-4">02</p>
+          <h3 style="font-family:'Cormorant Garamond',serif;font-weight:400;font-size:1.6rem;margin-bottom:1rem;">Eventos privados</h3>
+          <p class="text-mountain/60 leading-loose" style="font-size:0.88rem;">
+            Bodas, celebraciones y reuniones corporativas con vistas al Valle Central. Capacidad para eventos íntimos y medianos.
+          </p>
+        </div>
+
+        <!-- Fotografía -->
+        <div class="exp-card pt-10 pb-12 pr-8 md:pl-8 reveal reveal-delay-2">
+          <div class="mb-8">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="3" y="9" width="26" height="18" rx="2" stroke="#4A7C8E" stroke-width="1.2" fill="none"/>
+              <circle cx="16" cy="18" r="5" stroke="#4A7C8E" stroke-width="1.2" fill="none"/>
+              <path d="M11 9l2-4h6l2 4" stroke="#4A7C8E" stroke-width="1.2" stroke-linejoin="round" fill="none"/>
+              <circle cx="24" cy="14" r="1" fill="#4A7C8E"/>
+            </svg>
+          </div>
+          <p class="eyebrow text-mountain/40 mb-4">03</p>
+          <h3 style="font-family:'Cormorant Garamond',serif;font-weight:400;font-size:1.6rem;margin-bottom:1rem;">Locación fotográfica</h3>
+          <p class="text-mountain/60 leading-loose" style="font-size:0.88rem;">
+            Arquitectura, jardines y vistas espectaculares. Un escenario natural para sesiones, editoriales y producciones.
+          </p>
+        </div>
+      </div>
+
+      <!-- Mobile CTA -->
+      <div class="mt-14 md:hidden text-center">
+        <a href="#reservas" class="btn-primary py-3 px-10 text-xs">Consultar disponibilidad</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── 5. VISTA PANORÁMICA ──────────────────────────── -->
+  <section class="panorama-bg relative h-[70vh] min-h-[480px] flex items-center justify-center" id="vista">
+    <div class="absolute inset-0" style="background:rgba(26,43,60,0.38);"></div>
+
+    <div class="relative text-center px-8 reveal">
+      <!-- Big quote mark -->
+      <p class="big-quote mb-0" style="color:rgba(250,250,248,0.08); font-size:clamp(5rem,12vw,10rem); line-height:0.7; margin-bottom:-1rem;">"</p>
+      <blockquote style="font-family:'Cormorant Garamond',serif;font-weight:300;font-style:italic;font-size:clamp(1.6rem,3.5vw,3rem);color:#FAFAF8;letter-spacing:0.04em;line-height:1.4;max-width:22ch;margin:0 auto;">
+        Hay lugares que te hacen querer quedarte para siempre.
+      </blockquote>
+      <p class="eyebrow mt-8" style="color:rgba(250,250,248,0.45);">— 1,200 metros sobre el mar</p>
+    </div>
+  </section>
+
+  <!-- ─── 6. EVENTOS PRIVADOS ──────────────────────────── -->
+  <section class="py-28 md:py-40 px-8 md:px-16 lg:px-24" id="eventos">
+    <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 md:gap-24 items-center">
+
+      <!-- Image left -->
+      <div class="img-zoom reveal order-2 md:order-1" style="aspect-ratio:4/3;">
+        <img
+          src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=1200&q=90&auto=format&fit=crop"
+          alt="Eventos privados en Coffee Loft San Rafael"
+          class="w-full h-full object-cover"
+          style="filter:saturate(0.88);"
+        />
+      </div>
+
+      <!-- Text right -->
+      <div class="reveal reveal-delay-1 order-1 md:order-2">
+        <p class="eyebrow text-casa mb-8">Eventos &amp; Celebraciones</p>
+        <h2 style="font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(2rem,4vw,3.2rem);line-height:1.25;letter-spacing:0.02em;margin-bottom:2rem;">
+          Tu evento más importante,<br /><em>en el escenario perfecto</em>
+        </h2>
+        <div class="rule mb-8"></div>
+        <p class="text-mountain/65 leading-loose mb-5" style="font-size:0.95rem; max-width:42ch;">
+          Bodas íntimas bajo el cielo abierto. Cenas corporativas con vista al volcán Barva. Celebraciones familiares que se convierten en historia.
+        </p>
+        <p class="text-mountain/55 leading-loose mb-12" style="font-size:0.9rem; max-width:42ch;">
+          Coordinamos cada detalle para que tú solo tengas que estar presente.
+        </p>
+
+        <!-- Features -->
+        <div class="grid grid-cols-2 gap-y-5 gap-x-8 mb-14">
+          <div class="flex items-center gap-3">
+            <span class="w-1.5 h-1.5 rounded-full bg-casa flex-shrink-0"></span>
+            <span class="text-mountain/60 text-sm">Carpa transparente</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <span class="w-1.5 h-1.5 rounded-full bg-casa flex-shrink-0"></span>
+            <span class="text-mountain/60 text-sm">Jardines privados</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <span class="w-1.5 h-1.5 rounded-full bg-casa flex-shrink-0"></span>
+            <span class="text-mountain/60 text-sm">Catering especializado</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <span class="w-1.5 h-1.5 rounded-full bg-casa flex-shrink-0"></span>
+            <span class="text-mountain/60 text-sm">Iluminación artesanal</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <span class="w-1.5 h-1.5 rounded-full bg-casa flex-shrink-0"></span>
+            <span class="text-mountain/60 text-sm">Acceso privado</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <span class="w-1.5 h-1.5 rounded-full bg-casa flex-shrink-0"></span>
+            <span class="text-mountain/60 text-sm">Vista panorámica</span>
+          </div>
+        </div>
+
+        <a href="#reservas" class="btn-primary py-3.5 px-10 text-xs">Planificar mi evento</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── SEPARADOR ───────────────────────────────────── -->
+  <div class="px-8 md:px-16 lg:px-24">
+    <div class="max-w-7xl mx-auto hairline"></div>
+  </div>
+
+  <!-- ─── RESEÑAS ──────────────────────────────────────── -->
+  <section class="py-20 md:py-32 px-8 md:px-16 lg:px-24">
+    <div class="max-w-7xl mx-auto">
+
+      <div class="reveal mb-16">
+        <p class="eyebrow text-casa mb-5">Experiencias reales</p>
+        <h2 style="font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(1.8rem,3.5vw,3rem);letter-spacing:0.02em;">Lo que dicen nuestros <em>visitantes</em></h2>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6">
+
+        <!-- Reseña 1 -->
+        <div class="reveal" style="position:relative;border:1px solid rgba(26,43,60,0.1);padding:2.5rem;background:#FAFAF8;transition:box-shadow 400ms;" onmouseenter="this.style.boxShadow='0 8px 40px rgba(26,43,60,0.07)'" onmouseleave="this.style.boxShadow='none'">
+          <div style="position:absolute;top:1.5rem;right:1.75rem;font-family:'Cormorant Garamond',serif;font-size:4.5rem;line-height:1;color:rgba(74,124,142,0.12);user-select:none;">"</div>
+          <div class="flex gap-1 mb-6">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#C9A96E" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#C9A96E" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#C9A96E" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#C9A96E" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#C9A96E" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <p class="text-mountain/65 leading-loose mb-8" style="font-size:0.9rem;">
+            Un lugar que supera cualquier expectativa. Las vistas al Valle Central al amanecer son simplemente imposibles de describir. Volvemos para nuestra próxima celebración sin dudarlo.
+          </p>
+          <div class="flex items-center gap-4" style="border-top:1px solid rgba(26,43,60,0.07);padding-top:1.5rem;">
+            <div style="width:38px;height:38px;border-radius:50%;background:#4A7C8E;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <span style="font-family:'Cormorant Garamond',serif;color:#FAFAF8;font-size:1rem;font-weight:300;">A</span>
+            </div>
             <div>
-                <span class="sobre-tag">Cómo llegar</span>
-                <h2 class="sobre-heading" style="margin-bottom:20px;">San Rafael de Heredia, entre cafetales.</h2>
-                <p class="sobre-text">Nos encontrás rodeados de los campos de café de San Rafael, Heredia, Costa Rica — un entorno natural a pocos minutos de la ciudad. Escribinos para coordinar tu visita o reservar tu evento.</p>
-                <div class="sobre-social" style="margin-top:28px;">
-                    <a href="https://maps.app.goo.gl/ByP52PJL89NTxwmg7" target="_blank" rel="noopener">
-                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 110-5 2.5 2.5 0 010 5z"/></svg>
-                        Abrir en Google Maps
-                    </a>
-                    <a href="tel:+50683081001">
-                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
-                        +506 8308-1001
-                    </a>
-                </div>
+              <p style="font-family:'Cormorant Garamond',serif;font-weight:400;font-size:1rem;color:#1A2B3C;">Andrea Vargas</p>
+              <p style="font-size:0.72rem;color:rgba(26,43,60,0.4);letter-spacing:0.05em;margin-top:2px;">Evento privado · Heredia</p>
             </div>
-            <a href="https://maps.app.goo.gl/ByP52PJL89NTxwmg7" target="_blank" rel="noopener" style="display:block; border-radius:20px; overflow:hidden; border:1px solid rgba(143,174,122,0.15); box-shadow: 0 12px 40px rgba(0,0,0,0.35);">
-                <iframe
-                    title="Ubicación The Coffee Loft en San Rafael, Heredia"
-                    src="https://www.google.com/maps?q=San+Rafael+Heredia+Costa+Rica&output=embed"
-                    width="100%" height="320" style="border:0; display:block; filter:grayscale(0.15) contrast(1.06);"
-                    loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </a>
+          </div>
         </div>
-    </section>
 
-    <!-- CONTACTO -->
-    <section id="contacto" class="reveal-section contacto-section">
-        <div class="contacto-inner">
-            <span class="contacto-tag stagger-child">¿Reservamos?</span>
-            <h2 class="contacto-heading stagger-child">Hagamos tu evento inolvidable.</h2>
-            <p class="contacto-sub stagger-child">Contanos qué tenés en mente — tipo de evento, fecha y cantidad de invitados. Te respondemos en menos de 24 horas.</p>
-            <div class="contacto-btns stagger-child">
-                <a href="https://wa.me/50683081001?text=Hola%20The%20Coffee%20Loft!%20Me%20interesa%20reservar%20para%20un%20evento%20%E2%98%95" target="_blank" rel="noopener" class="btn-wa">
-                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
-                    Reservar por WhatsApp
-                </a>
-                <a href="tel:+50683081001" class="btn-ig">
-                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
-                    +506 8308-1001
-                </a>
-                <a href="https://www.instagram.com/coffeeloftsanrafael" target="_blank" rel="noopener" class="btn-ig">
-                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
-                    @coffeeloftsanrafael
-                </a>
-                <a href="https://maps.app.goo.gl/ByP52PJL89NTxwmg7" target="_blank" rel="noopener" class="btn-ig">
-                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 110-5 2.5 2.5 0 010 5z"/></svg>
-                    San Rafael, Heredia
-                </a>
+        <!-- Reseña 2 -->
+        <div class="reveal reveal-delay-1" style="position:relative;border:1px solid rgba(26,43,60,0.1);padding:2.5rem;background:#FAFAF8;transition:box-shadow 400ms;" onmouseenter="this.style.boxShadow='0 8px 40px rgba(26,43,60,0.07)'" onmouseleave="this.style.boxShadow='none'">
+          <div style="position:absolute;top:1.5rem;right:1.75rem;font-family:'Cormorant Garamond',serif;font-size:4.5rem;line-height:1;color:rgba(74,124,142,0.12);user-select:none;">"</div>
+          <div class="flex gap-1 mb-6">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#C9A96E" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#C9A96E" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#C9A96E" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#C9A96E" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#C9A96E" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <p class="text-mountain/65 leading-loose mb-8" style="font-size:0.9rem;">
+            Celebramos nuestra boda aquí y fue absolutamente mágico. El equipo coordinó cada detalle con una elegancia que no habíamos visto en ningún otro lugar de Costa Rica. Altamente recomendado.
+          </p>
+          <div class="flex items-center gap-4" style="border-top:1px solid rgba(26,43,60,0.07);padding-top:1.5rem;">
+            <div style="width:38px;height:38px;border-radius:50%;background:#3D5A47;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <span style="font-family:'Cormorant Garamond',serif;color:#FAFAF8;font-size:1rem;font-weight:300;">C</span>
             </div>
+            <div>
+              <p style="font-family:'Cormorant Garamond',serif;font-weight:400;font-size:1rem;color:#1A2B3C;">Carlos &amp; Sofía Mora</p>
+              <p style="font-size:0.72rem;color:rgba(26,43,60,0.4);letter-spacing:0.05em;margin-top:2px;">Boda · San José</p>
+            </div>
+          </div>
         </div>
-    </section>
 
-    <!-- FOOTER -->
-    <footer class="footer">
-        <span class="footer-logo">The Coffee Loft</span>
-        <span class="footer-copy">© 2026 · Todos los derechos reservados</span>
-        <div class="footer-social">
-            <a href="https://wa.me/50683081001" target="_blank" rel="noopener" aria-label="WhatsApp">
-                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
-            </a>
-            <a href="https://www.instagram.com/coffeeloftsanrafael" target="_blank" rel="noopener" aria-label="Instagram @coffeeloftsanrafael">
-                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
-            </a>
-            <a href="https://maps.app.goo.gl/ByP52PJL89NTxwmg7" target="_blank" rel="noopener" aria-label="Google Maps">
-                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 110-5 2.5 2.5 0 010 5z"/></svg>
-            </a>
+        <!-- Reseña 3 -->
+        <div class="reveal reveal-delay-2" style="position:relative;border:1px solid rgba(26,43,60,0.1);padding:2.5rem;background:#FAFAF8;transition:box-shadow 400ms;" onmouseenter="this.style.boxShadow='0 8px 40px rgba(26,43,60,0.07)'" onmouseleave="this.style.boxShadow='none'">
+          <div style="position:absolute;top:1.5rem;right:1.75rem;font-family:'Cormorant Garamond',serif;font-size:4.5rem;line-height:1;color:rgba(74,124,142,0.12);user-select:none;">"</div>
+          <div class="flex gap-1 mb-6">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#C9A96E" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#C9A96E" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#C9A96E" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#C9A96E" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#C9A96E" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <p class="text-mountain/65 leading-loose mb-8" style="font-size:0.9rem;">
+            El café de especialidad aquí es una experiencia en sí misma. La vista que acompaña cada taza, el silencio de las montañas, la arquitectura cálida. Un refugio que no sabía que necesitaba.
+          </p>
+          <div class="flex items-center gap-4" style="border-top:1px solid rgba(26,43,60,0.07);padding-top:1.5rem;">
+            <div style="width:38px;height:38px;border-radius:50%;background:#8B5E3C;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <span style="font-family:'Cormorant Garamond',serif;color:#FAFAF8;font-size:1rem;font-weight:300;">M</span>
+            </div>
+            <div>
+              <p style="font-family:'Cormorant Garamond',serif;font-weight:400;font-size:1rem;color:#1A2B3C;">Marcela Jiménez</p>
+              <p style="font-size:0.72rem;color:rgba(26,43,60,0.4);letter-spacing:0.05em;margin-top:2px;">Visita de café · Alajuela</p>
+            </div>
+          </div>
         </div>
-    </footer>
 
-    <script>
-        gsap.registerPlugin(ScrollTrigger);
+      </div>
+    </div>
+  </section>
 
-        /* ===================================================
-           CURSOR FOLLOWER
-        =================================================== */
-        (function initCursor() {
-            const dot  = document.getElementById('cursor-dot');
-            const ring = document.getElementById('cursor-ring');
-            if (!dot || !ring) return;
+  <!-- ─── 7. CTA RESERVAS ──────────────────────────────── -->
+  <section class="py-32 md:py-48 px-8 text-center bg-mountain" id="reservas">
+    <div class="max-w-3xl mx-auto reveal">
+      <p class="eyebrow mb-8" style="color:rgba(250,250,248,0.4);">Coffee Loft San Rafael</p>
+      <h2 style="font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(2.2rem,5vw,4.5rem);color:#FAFAF8;letter-spacing:0.04em;line-height:1.2;margin-bottom:2rem;">
+        ¿Cuándo viene<br /><em>a conocernos?</em>
+      </h2>
+      <p class="mb-14 leading-loose" style="color:rgba(250,250,248,0.55);font-size:0.95rem;max-width:38ch;margin-left:auto;margin-right:auto;margin-bottom:3.5rem;">
+        Para visitas, eventos privados o experiencias a medida, escríbanos directamente. Respondemos en menos de 24 horas.
+      </p>
 
-            let mouseX = 0, mouseY = 0;
-            let ringX  = 0, ringY  = 0;
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="mailto:hola@coffeeloftsanrafael.com" class="btn-light py-4 px-12 text-xs">Escribir por correo</a>
+        <a href="https://wa.me/50683081001" target="_blank" rel="noopener" class="btn-light py-4 px-12 text-xs">WhatsApp</a>
+      </div>
 
-            document.addEventListener('mousemove', e => {
-                mouseX = e.clientX; mouseY = e.clientY;
-                gsap.set(dot, { x: mouseX, y: mouseY });
-            });
+      <div class="mt-20 rule" style="background:rgba(250,250,248,0.1);"></div>
 
-            // Anillo con suavizado (lag)
-            function animateRing() {
-                ringX += (mouseX - ringX) * 0.12;
-                ringY += (mouseY - ringY) * 0.12;
-                gsap.set(ring, { x: ringX, y: ringY });
-                requestAnimationFrame(animateRing);
-            }
-            animateRing();
+      <!-- Location -->
+      <div class="mt-12 grid grid-cols-3 gap-6 text-center">
+        <div>
+          <p class="eyebrow mb-2" style="color:rgba(250,250,248,0.35);">Ubicación</p>
+          <p style="font-family:'Cormorant Garamond',serif;font-weight:300;color:rgba(250,250,248,0.75);font-size:1.05rem;">San Rafael<br />de Heredia</p>
+        </div>
+        <div>
+          <p class="eyebrow mb-2" style="color:rgba(250,250,248,0.35);">Altitud</p>
+          <p style="font-family:'Cormorant Garamond',serif;font-weight:300;color:rgba(250,250,248,0.75);font-size:1.05rem;">1,200 m<br />s.n.m.</p>
+        </div>
+        <div>
+          <p class="eyebrow mb-2" style="color:rgba(250,250,248,0.35);">Disponibilidad</p>
+          <p style="font-family:'Cormorant Garamond',serif;font-weight:300;color:rgba(250,250,248,0.75);font-size:1.05rem;">Todos<br />los días</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-            // Reacción a hover en enlaces y botones
-            const hoverTargets = document.querySelectorAll('a, button, .acc-item, .testi-card, .sobre-stat-card');
-            hoverTargets.forEach(el => {
-                el.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
-                el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));
-            });
-        })();
+  <!-- ─── 8. FOOTER ───────────────────────────────────── -->
+  <footer style="background:#101A23;border-top:1px solid rgba(250,250,248,0.06);">
+    <div class="max-w-7xl mx-auto px-8 md:px-16 lg:px-24 py-20">
 
-        /* ===================================================
-           SCROLL EXPANSION HERO (lógica original intacta)
-        =================================================== */
-        (function initScrollExpandHero() {
-            const hero      = document.getElementById('scroll-hero');
-            const media     = document.getElementById('sh-media');
-            const bg        = document.getElementById('sh-bg');
-            const overlay   = document.querySelector('#sh-media .sh-media-overlay');
-            const caption   = document.getElementById('sh-media-caption');
-            const wordLeft  = document.getElementById('sh-word-left');
-            const wordRight = document.getElementById('sh-word-right');
-            const reveal    = document.getElementById('sh-reveal');
-            if (!hero || !media) return;
+      <!-- ── 4-column grid ── -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-14 mb-16">
 
-            let progress = 0;
-            let expanded = false;
-            let touchStartY = 0;
-            const isMobile = () => window.innerWidth < 768;
+        <!-- Col 1: Brand + newsletter -->
+        <div style="position:relative;">
+          <p style="font-family:'Cormorant Garamond',serif;font-weight:300;letter-spacing:0.14em;font-size:1.3rem;color:#FAFAF8;margin-bottom:4px;">Coffee Loft</p>
+          <p style="font-family:'Cormorant SC',serif;font-weight:300;letter-spacing:0.3em;font-size:0.55rem;color:rgba(250,250,248,0.3);margin-bottom:1.5rem;">San Rafael · Heredia · Costa Rica</p>
+          <p style="font-size:0.82rem;color:rgba(250,250,248,0.45);line-height:1.8;margin-bottom:1.5rem;">
+            Suscribite para recibir noticias, disponibilidad exclusiva y novedades del lugar.
+          </p>
+          <!-- Newsletter input -->
+          <div style="position:relative;">
+            <input
+              type="email"
+              placeholder="Tu correo electrónico"
+              style="width:100%;background:rgba(250,250,248,0.05);border:1px solid rgba(250,250,248,0.12);color:#FAFAF8;font-family:'DM Sans',sans-serif;font-size:0.8rem;padding:0.75rem 3rem 0.75rem 1rem;outline:none;transition:border-color 300ms;letter-spacing:0.02em;"
+              onfocus="this.style.borderColor='rgba(250,250,248,0.3)'"
+              onblur="this.style.borderColor='rgba(250,250,248,0.12)'"
+            />
+            <button
+              onclick="this.previousElementSibling.value=''"
+              style="position:absolute;right:0.75rem;top:50%;transform:translateY(-50%);background:none;border:none;cursor:pointer;padding:4px;opacity:0.5;transition:opacity 300ms;"
+              onmouseenter="this.style.opacity='1'"
+              onmouseleave="this.style.opacity='0.5'"
+              aria-label="Suscribirse"
+            >
+              <!-- Send icon -->
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FAFAF8" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="22" y1="2" x2="11" y2="13"/>
+                <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+              </svg>
+            </button>
+          </div>
+          <!-- Decorative blur -->
+          <div style="position:absolute;top:-1rem;right:-2rem;width:80px;height:80px;border-radius:50%;background:rgba(74,124,142,0.08);filter:blur(24px);pointer-events:none;"></div>
+        </div>
 
-            function render() {
-                const w  = 300 + progress * (isMobile() ? 650 : 1250);
-                const h  = 400 + progress * (isMobile() ? 200 : 400);
-                const tx = progress * (isMobile() ? 22 : 14);
-                media.style.width  = w + 'px';
-                media.style.height = h + 'px';
-                bg.style.opacity = (1 - progress).toFixed(3);
-                if (overlay) overlay.style.opacity = (0.55 - progress * 0.35).toFixed(3);
-                if (caption) caption.style.opacity = Math.max(0, 1 - progress * 1.4).toFixed(3);
-                wordLeft.style.transform  = 'translateX(-' + tx + 'vw)';
-                wordRight.style.transform = 'translateX(' + tx + 'vw)';
-            }
+        <!-- Col 2: Navegación -->
+        <div>
+          <p class="eyebrow mb-6" style="color:rgba(250,250,248,0.3);">Navegación</p>
+          <nav style="display:flex;flex-direction:column;gap:0.75rem;">
+            <a href="#sobre" style="font-size:0.85rem;color:rgba(250,250,248,0.5);letter-spacing:0.04em;transition:color 300ms;" onmouseenter="this.style.color='#FAFAF8'" onmouseleave="this.style.color='rgba(250,250,248,0.5)'">El Lugar</a>
+            <a href="#galeria" style="font-size:0.85rem;color:rgba(250,250,248,0.5);letter-spacing:0.04em;transition:color 300ms;" onmouseenter="this.style.color='#FAFAF8'" onmouseleave="this.style.color='rgba(250,250,248,0.5)'">Galería</a>
+            <a href="#experiencias" style="font-size:0.85rem;color:rgba(250,250,248,0.5);letter-spacing:0.04em;transition:color 300ms;" onmouseenter="this.style.color='#FAFAF8'" onmouseleave="this.style.color='rgba(250,250,248,0.5)'">Experiencias</a>
+            <a href="#eventos" style="font-size:0.85rem;color:rgba(250,250,248,0.5);letter-spacing:0.04em;transition:color 300ms;" onmouseenter="this.style.color='#FAFAF8'" onmouseleave="this.style.color='rgba(250,250,248,0.5)'">Eventos privados</a>
+            <a href="#reservas" style="font-size:0.85rem;color:rgba(250,250,248,0.5);letter-spacing:0.04em;transition:color 300ms;" onmouseenter="this.style.color='#FAFAF8'" onmouseleave="this.style.color='rgba(250,250,248,0.5)'">Reservas</a>
+          </nav>
+        </div>
 
-            function setExpanded(state) {
-                expanded = state;
-                reveal.style.opacity = state ? '1' : '0';
-                document.body.style.overflow = state ? '' : 'hidden';
-                if (window._navbarSetScrolled) {
-                    window._navbarSetScrolled(state ? window.scrollY > 60 : false);
-                }
-            }
+        <!-- Col 3: Contacto -->
+        <div>
+          <p class="eyebrow mb-6" style="color:rgba(250,250,248,0.3);">Contacto</p>
+          <div style="display:flex;flex-direction:column;gap:0.75rem;">
+            <div style="display:flex;align-items:flex-start;gap:0.75rem;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(74,124,142,0.8)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:3px;">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/>
+              </svg>
+              <span style="font-size:0.82rem;color:rgba(250,250,248,0.45);line-height:1.7;">San Rafael de Heredia<br/>Costa Rica · 1,200 m s.n.m.</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:0.75rem;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(74,124,142,0.8)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;">
+                <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8 19.79 19.79 0 01.15 1.2 2 2 0 012.11 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14.92z"/>
+              </svg>
+              <a href="https://wa.me/50683081001" style="font-size:0.82rem;color:rgba(250,250,248,0.45);transition:color 300ms;" onmouseenter="this.style.color='#FAFAF8'" onmouseleave="this.style.color='rgba(250,250,248,0.45)'">+506 8308-1001</a>
+            </div>
+            <div style="display:flex;align-items:center;gap:0.75rem;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(74,124,142,0.8)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
+              </svg>
+              <a href="mailto:hola@coffeeloftsanrafael.com" style="font-size:0.82rem;color:rgba(250,250,248,0.45);transition:color 300ms;" onmouseenter="this.style.color='#FAFAF8'" onmouseleave="this.style.color='rgba(250,250,248,0.45)'">hola@coffeeloftsanrafael.com</a>
+            </div>
+            <div style="display:flex;align-items:center;gap:0.75rem;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(74,124,142,0.8)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;">
+                <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+              </svg>
+              <span style="font-size:0.82rem;color:rgba(250,250,248,0.45);">Todos los días · Previa cita</span>
+            </div>
+          </div>
+        </div>
 
-            const SNAP_THRESHOLD = 0.5;
-            let animating = false;
-            function snapTo(target) {
-                if (animating) return;
-                animating = true;
-                const startP  = progress;
-                const delta   = target - startP;
-                const duration = 600;
-                const start   = performance.now();
-                function tick(now) {
-                    const t = Math.min((now - start) / duration, 1);
-                    const ease = t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
-                    progress = startP + delta * ease;
-                    render();
-                    if (t < 1) { requestAnimationFrame(tick); }
-                    else { progress = target; render(); animating = false; setExpanded(target === 1); }
-                }
-                requestAnimationFrame(tick);
-            }
+        <!-- Col 4: Redes -->
+        <div>
+          <p class="eyebrow mb-6" style="color:rgba(250,250,248,0.3);">Seguinos</p>
+          <div style="display:flex;gap:0.75rem;margin-bottom:2rem;">
+            <!-- Instagram -->
+            <a href="https://www.instagram.com/coffeeloftsanrafael" aria-label="Instagram" target="_blank" rel="noopener"
+               style="width:40px;height:40px;border:1px solid rgba(250,250,248,0.12);display:flex;align-items:center;justify-content:center;transition:border-color 300ms,background 300ms;"
+               onmouseenter="this.style.borderColor='rgba(250,250,248,0.4)';this.style.background='rgba(250,250,248,0.06)'"
+               onmouseleave="this.style.borderColor='rgba(250,250,248,0.12)';this.style.background='transparent'">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FAFAF8" stroke-width="1.4" opacity="0.7">
+                <rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="0.5" fill="#FAFAF8"/>
+              </svg>
+            </a>
+            <!-- Facebook -->
+            <a href="#" aria-label="Facebook"
+               style="width:40px;height:40px;border:1px solid rgba(250,250,248,0.12);display:flex;align-items:center;justify-content:center;transition:border-color 300ms,background 300ms;"
+               onmouseenter="this.style.borderColor='rgba(250,250,248,0.4)';this.style.background='rgba(250,250,248,0.06)'"
+               onmouseleave="this.style.borderColor='rgba(250,250,248,0.12)';this.style.background='transparent'">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FAFAF8" stroke-width="1.4" opacity="0.7">
+                <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/>
+              </svg>
+            </a>
+            <!-- WhatsApp -->
+            <a href="https://wa.me/50683081001" aria-label="WhatsApp" target="_blank" rel="noopener"
+               style="width:40px;height:40px;border:1px solid rgba(250,250,248,0.12);display:flex;align-items:center;justify-content:center;transition:border-color 300ms,background 300ms;"
+               onmouseenter="this.style.borderColor='rgba(37,211,102,0.5)';this.style.background='rgba(37,211,102,0.06)'"
+               onmouseleave="this.style.borderColor='rgba(250,250,248,0.12)';this.style.background='transparent'">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="rgba(250,250,248,0.7)">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+              </svg>
+            </a>
+          </div>
+          <p style="font-size:0.75rem;color:rgba(250,250,248,0.25);line-height:1.8;max-width:22ch;">
+            Seguinos en redes para conocer el día a día del lugar, las vistas y los eventos especiales.
+          </p>
+        </div>
 
-            function step(delta) {
-                if (animating) return;
-                progress = Math.max(0, Math.min(1, progress + delta));
-                render();
-                if (progress >= 1) { setExpanded(true); }
-                else if (progress <= 0) { setExpanded(false); }
-            }
+      </div><!-- /grid -->
 
-            function onWheel(e) {
-                if (expanded) return;
-                e.preventDefault();
-                if (progress > 0 && progress < 1) { step(e.deltaY * 0.004); }
-                else if (progress === 0 && e.deltaY > 0) { step(e.deltaY * 0.004); }
-                else if (progress === 1 && e.deltaY < 0) { step(e.deltaY * 0.004); }
-                else if (!expanded) { step(e.deltaY * 0.004); }
-            }
+      <!-- ── Bottom bar ── -->
+      <div style="border-top:1px solid rgba(250,250,248,0.07);padding-top:2rem;display:flex;flex-direction:column;gap:1rem;" class="md:flex-row md:items-center md:justify-between">
+        <p style="font-size:0.7rem;color:rgba(250,250,248,0.22);letter-spacing:0.05em;">© 2025 Coffee Loft San Rafael. Todos los derechos reservados.</p>
+        <p style="font-size:0.7rem;color:rgba(250,250,248,0.18);letter-spacing:0.05em;">Diseño web por <span style="color:rgba(250,250,248,0.32);">Vetric Group</span></p>
+      </div>
 
-            function onTouchStart(e) { touchStartY = e.touches[0].clientY; }
-            function onTouchMove(e) {
-                if (!touchStartY) return;
-                const deltaY = touchStartY - e.touches[0].clientY;
-                if (expanded && deltaY < 0 && window.scrollY === 0) {
-                    e.preventDefault(); step(deltaY * 0.006); touchStartY = e.touches[0].clientY;
-                } else if (!expanded) {
-                    e.preventDefault(); step(deltaY * (deltaY < 0 ? 0.008 : 0.005)); touchStartY = e.touches[0].clientY;
-                }
-            }
-            function onScroll() { if (!expanded) window.scrollTo(0, 0); }
+    </div>
+  </footer>
 
-            window.addEventListener('wheel', onWheel, { passive: false });
-            window.addEventListener('touchstart', onTouchStart, { passive: false });
-            window.addEventListener('touchmove', onTouchMove, { passive: false });
-            window.addEventListener('touchend', () => { touchStartY = 0; });
-            window.addEventListener('scroll', onScroll);
-            window.addEventListener('resize', render);
+  <!-- ─── FLOATING WHATSAPP ────────────────────────────── -->
+  <a href="https://wa.me/50683081001" target="_blank" rel="noopener"
+     aria-label="Contactar por WhatsApp"
+     style="position:fixed;bottom:2rem;right:2rem;z-index:100;width:52px;height:52px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,0.35);transition:transform 300ms, box-shadow 300ms;"
+     onmouseenter="this.style.transform='scale(1.08)';this.style.boxShadow='0 6px 28px rgba(37,211,102,0.45)'"
+     onmouseleave="this.style.transform='scale(1)';this.style.boxShadow='0 4px 20px rgba(37,211,102,0.35)'">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+  </a>
 
-            setExpanded(false);
-            render();
-        })();
+  <!-- ─── SCRIPTS ──────────────────────────────────────── -->
+  <script>
+    // ═══════════════════════════════════════════════════
+    // SCROLL-EXPANSION HERO ENGINE
+    // Ported from ScrollExpandMedia React component
+    // ═══════════════════════════════════════════════════
 
-        /* ===================================================
-           ACORDEÓN DE ESPACIOS (mejorado con GSAP)
-        =================================================== */
-        (function initAccordion() {
-            const EXPANDED = 420, COLLAPSED = 70;
-            const items = document.querySelectorAll('#accordion-items .acc-item');
-            if (!items.length) return;
-            function isMobile() { return window.innerWidth <= 768; }
-            function setActive(activeIndex) {
-                items.forEach((el, i) => {
-                    const isActive = i === activeIndex;
-                    el.classList.toggle('active', isActive);
-                    if (isMobile()) {
-                        gsap.to(el, { height: isActive ? 320 : 80, duration: 0.65, ease: 'cubic.inOut' });
-                        el.style.width = '100%';
-                    } else {
-                        gsap.to(el, {
-                            width: (isActive ? EXPANDED : COLLAPSED) + 'px',
-                            duration: 0.75,
-                            ease: 'cubic.inOut'
-                        });
-                        el.style.height = '';
-                    }
-                });
-            }
-            setActive(0);
-            items.forEach((el, i) => {
-                el.addEventListener('mouseenter', () => setActive(i));
-                el.addEventListener('click', () => setActive(i));
-            });
-            window.addEventListener('resize', () => {
-                const current = [...items].findIndex(el => el.classList.contains('active'));
-                setActive(current >= 0 ? current : 0);
-            });
-        })();
+    (function() {
+      const isMobile = () => window.innerWidth < 768;
 
-        /* ===================================================
-           NAVBAR SCROLL
-        =================================================== */
-        const navbar = document.getElementById('navbar');
-        window.addEventListener('scroll', () => {
-            if (document.body.style.overflow !== 'hidden') {
-                navbar.classList.toggle('scrolled', window.scrollY > 60);
-            }
-        }, { passive: true });
-        window._navbarSetScrolled = function(state) {
-            navbar.classList.toggle('scrolled', state);
-        };
+      // ── State ──────────────────────────────────────────
+      let scrollProgress   = 0;
+      let fullyExpanded    = false;
+      let showContent      = false;
+      let touchStartY      = 0;
+      let heroReady        = false;   // true after loader hides
 
-        /* ===================================================
-           SMOOTH SCROLL
-        =================================================== */
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
-            });
-        });
+      // ── DOM refs ───────────────────────────────────────
+      const heroSection  = document.getElementById('hero-expand');
+      const bgImg        = document.getElementById('hero-bg-img');
+      const mediaWrap    = document.getElementById('hero-media-wrap');
+      const mediaOverlay = document.getElementById('hero-media-overlay');
+      const hw1          = document.getElementById('hw1');
+      const hw2          = document.getElementById('hw2');
+      const hmLoc        = document.getElementById('hm-loc');
+      const hmScroll     = document.getElementById('hm-scroll');
 
-        /* ===================================================
-           GSAP SCROLL REVEAL CON STAGGER
-        =================================================== */
-        (function initScrollReveal() {
-            // Sections principales
-            document.querySelectorAll('.reveal-section').forEach(section => {
-                gsap.set(section, { opacity: 0, y: 70 });
-                ScrollTrigger.create({
-                    trigger: section, start: 'top 88%', once: true,
-                    onEnter: () => gsap.to(section, { opacity: 1, y: 0, duration: 1, ease: 'power3.out' })
-                });
-            });
+      // ── Dimensions ─────────────────────────────────────
+      function getStartDims() {
+        return isMobile()
+          ? { w: 280, h: 360 }
+          : { w: 340, h: 420 };
+      }
+      function getExpandAmount() {
+        return isMobile()
+          ? { w: 680, h: 220 }
+          : { w: 1280, h: 420 };
+      }
 
-            // Stagger en elementos .stagger-child dentro de cada sección
-            document.querySelectorAll('section').forEach(section => {
-                const children = section.querySelectorAll('.stagger-child');
-                if (!children.length) return;
-                gsap.set(children, { opacity: 0, y: 36 });
-                ScrollTrigger.create({
-                    trigger: section, start: 'top 80%', once: true,
-                    onEnter: () => gsap.to(children, {
-                        opacity: 1, y: 0,
-                        duration: 0.8,
-                        ease: 'power3.out',
-                        stagger: 0.13
-                    })
-                });
-            });
+      // ── Render based on progress (0→1) ─────────────────
+      function render(p) {
+        const sd = getStartDims();
+        const ea = getExpandAmount();
+        const mob = isMobile();
 
-            // Testimonios stagger
-            const testiCards = document.querySelectorAll('.testi-card');
-            if (testiCards.length) {
-                gsap.set(testiCards, { opacity: 0, y: 32 });
-                ScrollTrigger.create({
-                    trigger: testiCards[0].closest('section') || testiCards[0].parentElement,
-                    start: 'top 80%', once: true,
-                    onEnter: () => gsap.to(testiCards, { opacity: 1, y: 0, duration: 0.75, ease: 'power2.out', stagger: 0.14 })
-                });
-            }
+        const w = Math.min(sd.w + p * ea.w, window.innerWidth  * 0.97);
+        const h = Math.min(sd.h + p * ea.h, window.innerHeight * 0.92);
 
-            // Acc items stagger
-            const accItems = document.querySelectorAll('.accordion-items .acc-item');
-            if (accItems.length) {
-                gsap.set(accItems, { opacity: 0, scaleY: 0.92, transformOrigin: 'bottom center' });
-                ScrollTrigger.create({
-                    trigger: accItems[0].closest('section') || accItems[0].parentElement,
-                    start: 'top 80%', once: true,
-                    onEnter: () => gsap.to(accItems, {
-                        opacity: 1, scaleY: 1,
-                        duration: 0.7,
-                        ease: 'power2.out',
-                        stagger: 0.09
-                    })
-                });
-            }
+        // Media box size
+        mediaWrap.style.width  = w + 'px';
+        mediaWrap.style.height = h + 'px';
 
-            // Stat cards stagger
-            const statCards = document.querySelectorAll('.sobre-stat-card');
-            if (statCards.length) {
-                gsap.set(statCards, { opacity: 0, y: 28 });
-                ScrollTrigger.create({
-                    trigger: statCards[0].closest('section') || statCards[0].parentElement,
-                    start: 'top 82%', once: true,
-                    onEnter: () => gsap.to(statCards, { opacity: 1, y: 0, duration: 0.7, ease: 'power2.out', stagger: 0.1 })
-                });
-            }
-        })();
+        // Border-radius collapses to 0 as it fills screen
+        const radius = Math.max(0, 16 * (1 - p * 1.4));
+        mediaWrap.style.borderRadius = radius + 'px';
 
-        /* ===================================================
-           PARALLAX SUTIL EN IMÁGENES DE FONDO
-        =================================================== */
-        (function initParallax() {
-            // Parallax en el hero background
-            const shBgImg = document.querySelector('#sh-bg img');
-            if (shBgImg) {
-                ScrollTrigger.create({
-                    trigger: '#scroll-hero',
-                    start: 'top top',
-                    end: 'bottom top',
-                    scrub: true,
-                    onUpdate: self => {
-                        shBgImg.style.transform = `translateY(${self.progress * 40}px) scale(1.06)`;
-                    }
-                });
-            }
+        // Shadow dims as it expands
+        const shadowA = Math.max(0, 0.35 * (1 - p));
+        mediaWrap.style.boxShadow = `0 0 80px rgba(0,0,0,${shadowA})`;
 
-            // Parallax en las imágenes del acordeón
-            document.querySelectorAll('.acc-item img').forEach(img => {
-                gsap.to(img, {
-                    yPercent: -8,
-                    ease: 'none',
-                    scrollTrigger: {
-                        trigger: img.closest('.acc-item'),
-                        start: 'top bottom',
-                        end: 'bottom top',
-                        scrub: 1.2
-                    }
-                });
-            });
+        // Background fades out
+        bgImg.style.opacity = Math.max(0, 1 - p * 1.2);
 
-            // Parallax en la imagen central de la sección Sobre
-            const centerImg = document.querySelector('.sobre-center-img video');
-            if (centerImg) {
-                gsap.to(centerImg, {
-                    yPercent: -6,
-                    ease: 'none',
-                    scrollTrigger: {
-                        trigger: '.sobre-center-img',
-                        start: 'top bottom',
-                        end: 'bottom top',
-                        scrub: 1.5
-                    }
-                });
-            }
+        // Media overlay fades out
+        const overlayOp = Math.max(0, 0.45 - p * 0.35);
+        mediaOverlay.style.opacity = overlayOp;
 
-            // Parallax en la sección clientes (reseñas)
-            const clientesParallaxImg = document.querySelector('.clientes-parallax-bg img');
-            if (clientesParallaxImg) {
-                gsap.to(clientesParallaxImg, {
-                    yPercent: 15,
-                    ease: 'none',
-                    scrollTrigger: {
-                        trigger: '#clientes',
-                        start: 'top bottom',
-                        end: 'bottom top',
-                        scrub: 1.2
-                    }
-                });
-            }
-        })();
+        // Title words fly apart
+        const spreadVW = p * (mob ? 40 : 35);
+        hw1.style.transform = `translateX(-${spreadVW}vw)`;
+        hw2.style.transform = `translateX(${spreadVW}vw)`;
 
-        /* ===================================================
-           STAT COUNTERS ANIMADOS
-        =================================================== */
-        (function initStatCounters() {
-            const cards = document.querySelectorAll('.sobre-stat-card');
-            if (!cards.length) return;
-            const observed = new Set();
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (!entry.isIntersecting || observed.has(entry.target)) return;
-                    observed.add(entry.target);
-                    const el = entry.target.querySelector('.sobre-stat-value');
-                    if (!el) return;
-                    const target = parseInt(el.dataset.target, 10);
-                    const duration = 1500;
-                    const start = performance.now();
-                    function tick(now) {
-                        const p = Math.min((now - start) / duration, 1);
-                        const ease = 1 - Math.pow(1 - p, 3);
-                        el.textContent = Math.floor(ease * target);
-                        if (p < 1) requestAnimationFrame(tick);
-                    }
-                    requestAnimationFrame(tick);
-                });
-            }, { threshold: 0.4 });
-            cards.forEach(c => observer.observe(c));
-        })();
+        // Title fades slightly at full expansion
+        const titleOp = p > 0.7 ? Math.max(0, 1 - (p - 0.7) * 3.3) : 1;
+        hw1.style.opacity = titleOp;
+        hw2.style.opacity = titleOp;
 
-        /* ===================================================
-           AUTOPLAY DE VIDEO EN iOS
-        =================================================== */
-        (function() {
-            var vid = document.getElementById('sobre-video');
-            if (!vid) return;
-            vid.muted = true;
-            var playPromise = vid.play();
-            if (playPromise !== undefined) {
-                playPromise.catch(function() {
-                    document.addEventListener('touchstart', function tryPlay() {
-                        vid.play();
-                        document.removeEventListener('touchstart', tryPlay);
-                    }, { once: true });
-                });
-            }
-            if ('IntersectionObserver' in window) {
-                var observer = new IntersectionObserver(function(entries) {
-                    entries.forEach(function(entry) {
-                        if (entry.isIntersecting) { vid.play(); }
-                        else { vid.pause(); }
-                    });
-                }, { threshold: 0.25 });
-                observer.observe(vid);
-            }
-        })();
+        // Meta labels slide out opposite directions
+        const metaSlide = p * (mob ? 30 : 20);
+        hmLoc.style.transform    = `translateX(-${metaSlide}vw)`;
+        hmLoc.style.opacity      = Math.max(0, 1 - p * 2);
+        hmScroll.style.transform = `translateX(${metaSlide}vw)`;
+        hmScroll.style.opacity   = Math.max(0, 1 - p * 2);
+      }
 
-        /* ===================================================
-           FIX SOBRE LAYOUT EN MOBILE
-        =================================================== */
-        if (window.innerWidth <= 768) {
-            document.addEventListener('DOMContentLoaded', function() {
-                var inner = document.getElementById('sobre-inner');
-                if (inner) {
-                    inner.style.cssText = 'display:flex!important;flex-direction:column!important;gap:40px!important;width:100%!important;max-width:100%!important;box-sizing:border-box!important;';
-                    Array.from(inner.children).forEach(function(child) {
-                        child.style.cssText = 'width:100%!important;max-width:100%!important;min-width:0!important;box-sizing:border-box!important;';
-                    });
-                }
-            });
+      // ── Advance progress ───────────────────────────────
+      function advance(delta) {
+        const newP = Math.min(Math.max(scrollProgress + delta, 0), 1);
+        scrollProgress = newP;
+        render(newP);
+
+        if (newP >= 1 && !fullyExpanded) {
+          fullyExpanded = true;
+          showContent   = true;
+          document.body.classList.remove('hero-locked');
+          // Small delay before unlocking so the expansion settles
+          setTimeout(() => {
+            document.body.style.overflowY = '';
+          }, 80);
+        } else if (newP < 0.75 && showContent) {
+          showContent = false;
         }
-    </script>
+
+        if (!fullyExpanded) {
+          // Keep page stuck at top
+          window.scrollTo(0, 0);
+        }
+      }
+
+      // ── Wheel handler ──────────────────────────────────
+      function onWheel(e) {
+        if (!heroReady) return;
+
+        if (fullyExpanded) {
+          // Allow scrolling back to collapse hero only if at very top
+          if (e.deltaY < 0 && window.scrollY <= 2) {
+            fullyExpanded = false;
+            document.body.classList.add('hero-locked');
+            e.preventDefault();
+          }
+          return;
+        }
+
+        e.preventDefault();
+        const delta = e.deltaY * 0.0009;
+        advance(delta);
+      }
+
+      // ── Touch handlers ─────────────────────────────────
+      function onTouchStart(e) {
+        if (!heroReady) return;
+        touchStartY = e.touches[0].clientY;
+      }
+
+      function onTouchMove(e) {
+        if (!heroReady || touchStartY === 0) return;
+
+        const currentY = e.touches[0].clientY;
+        const deltaY   = touchStartY - currentY;  // positive = scroll down
+
+        if (fullyExpanded) {
+          if (deltaY < -20 && window.scrollY <= 2) {
+            fullyExpanded = false;
+            document.body.classList.add('hero-locked');
+            e.preventDefault();
+          }
+          touchStartY = currentY;
+          return;
+        }
+
+        e.preventDefault();
+        // Higher sensitivity going backwards (scroll up to collapse)
+        const factor = deltaY < 0 ? 0.008 : 0.005;
+        advance(deltaY * factor);
+        touchStartY = currentY;
+      }
+
+      function onTouchEnd() {
+        touchStartY = 0;
+      }
+
+      // ── Prevent scroll while hero locked ───────────────
+      function onScroll() {
+        if (!fullyExpanded) {
+          window.scrollTo(0, 0);
+        }
+      }
+
+      // ── Init ───────────────────────────────────────────
+      function initHero() {
+        // Start locked
+        document.body.classList.add('hero-locked');
+
+        // Initial render at progress 0
+        render(0);
+
+        // Bind events
+        window.addEventListener('wheel',      onWheel,      { passive: false });
+        window.addEventListener('scroll',     onScroll,     { passive: true  });
+        window.addEventListener('touchstart', onTouchStart, { passive: false });
+        window.addEventListener('touchmove',  onTouchMove,  { passive: false });
+        window.addEventListener('touchend',   onTouchEnd,   { passive: true  });
+
+        // Re-render on resize
+        window.addEventListener('resize', () => render(scrollProgress), { passive: true });
+      }
+
+      // ── Expose heroReady setter ─────────────────────────
+      window._heroSetReady = function() {
+        heroReady = true;
+      };
+
+      // Run
+      initHero();
+    })();
+
+
+    // ═══════════════════════════════════════════════════
+    // PAGE LOADER
+    // ═══════════════════════════════════════════════════
+    const loader = document.getElementById('loader');
+
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        loader.classList.add('hidden');
+        window._heroSetReady();   // unlock hero interaction after loader
+      }, 1800);
+    });
+
+
+    // ═══════════════════════════════════════════════════
+    // NAV SCROLL STATE
+    // ═══════════════════════════════════════════════════
+    const nav      = document.getElementById('nav');
+    const navLogo  = document.getElementById('nav-logo');
+    const navSub   = document.getElementById('nav-sub');
+    const navCta   = document.getElementById('nav-cta');
+    const mb1      = document.getElementById('mb1');
+    const mb2      = document.getElementById('mb2');
+    const navLinks = [
+      document.getElementById('nav-l1'),
+      document.getElementById('nav-l2'),
+      document.getElementById('nav-l3'),
+    ];
+
+    function updateNav() {
+      const scrolled = window.scrollY > 80;
+      nav.classList.toggle('scrolled', scrolled);
+
+      const color    = scrolled ? '#1A2B3C' : '#FAFAF8';
+      const subColor = scrolled ? 'rgba(26,43,60,0.4)' : 'rgba(250,250,248,0.55)';
+
+      navLogo.style.color  = color;
+      navSub.style.color   = subColor;
+      mb1.style.background = color;
+      mb2.style.background = color;
+
+      navLinks.forEach(l => {
+        l.style.color = scrolled ? 'rgba(26,43,60,0.65)' : 'rgba(250,250,248,0.85)';
+      });
+
+      if (scrolled) {
+        navCta.style.borderColor = 'rgba(26,43,60,0.5)';
+        navCta.style.color       = '#1A2B3C';
+        navCta.onmouseenter = () => { navCta.style.background='#1A2B3C'; navCta.style.color='#FAFAF8'; };
+        navCta.onmouseleave = () => { navCta.style.background='transparent'; navCta.style.color='#1A2B3C'; };
+      } else {
+        navCta.style.borderColor = 'rgba(250,250,248,0.6)';
+        navCta.style.color       = '#FAFAF8';
+        navCta.style.background  = 'transparent';
+        navCta.onmouseenter = () => { navCta.style.background='rgba(250,250,248,0.15)'; };
+        navCta.onmouseleave = () => { navCta.style.background='transparent'; };
+      }
+    }
+
+    window.addEventListener('scroll', updateNav, { passive: true });
+    updateNav();
+
+
+    // ═══════════════════════════════════════════════════
+    // MOBILE MENU
+    // ═══════════════════════════════════════════════════
+    const mobileBtn  = document.getElementById('mobile-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    let menuOpen = false;
+
+    mobileBtn.addEventListener('click', () => {
+      menuOpen = !menuOpen;
+      mobileMenu.style.display = menuOpen ? 'flex' : 'none';
+      // Don't fight with hero-locked when toggling mobile menu
+      if (!document.body.classList.contains('hero-locked')) {
+        document.body.style.overflow = menuOpen ? 'hidden' : '';
+      }
+    });
+
+    function closeMobile() {
+      menuOpen = false;
+      mobileMenu.style.display = 'none';
+      document.body.style.overflow = '';
+    }
+
+
+    // ═══════════════════════════════════════════════════
+    // ACCORDION GALLERY
+    // ═══════════════════════════════════════════════════
+    (function() {
+      const panels  = document.querySelectorAll('.acc-panel');
+      let active    = 0;
+
+      function setActive(idx) {
+        panels.forEach((p, i) => {
+          p.classList.toggle('acc-active', i === idx);
+        });
+        active = idx;
+      }
+
+      panels.forEach((panel, i) => {
+        panel.addEventListener('click', () => setActive(i));
+        // Touch: activate on touchstart for snappier mobile feel
+        panel.addEventListener('touchstart', () => setActive(i), { passive: true });
+      });
+
+      // Staggered slide-in on first visible
+      const accTrack = document.getElementById('acc-track');
+      const accObs   = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting) {
+          panels.forEach((p, i) => {
+            setTimeout(() => p.classList.add('acc-visible'), 120 * i);
+          });
+          accObs.disconnect();
+        }
+      }, { threshold: 0.2 });
+
+      accObs.observe(accTrack);
+    })();
+
+
+    // ═══════════════════════════════════════════════════
+    // INTERSECTION OBSERVER — SCROLL REVEALS
+    // ═══════════════════════════════════════════════════
+    const revealEls = document.querySelectorAll('.reveal');
+    const observer  = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+    revealEls.forEach(el => observer.observe(el));
+  </script>
 </body>
 </html>
